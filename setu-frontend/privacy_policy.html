@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setu — Privacy Policy</title>
+    <meta name="description" content="Setu's Privacy Policy — how we collect, use, and protect your personal data on our real-time collaboration platform.">
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/logo1.webp">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+    <meta name="theme-color" content="#1C1A29">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+ <!-- Meta tag -->
+    <title>Setu Privacy Policy: Data Collection, Security & Rights</title>
+    <meta name="description" content="Discover how Setu safeguards your information with encrypted transfers, secure authentication, responsible data handling, and user privacy rights.">
+    <meta name="keywords" content="Setu, setu connect, file sharing, setusync, setu privacy policy, data security, user privacy, encrypted transfers, secure authentication, data handling, privacy rights">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/privacy-policy.html">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu Privacy Policy: Data Collection, Security & Rights">
+    <meta property="og:description" content="Discover how Setu safeguards your information with encrypted transfers, secure authentication, responsible data handling, and user privacy rights.">
+    <meta property="og:url" content="https://setusync.space/privacy-policy.html">
+    <meta property="og:site_name" content="सेतु-Connect with the world">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+
+<style>
+  :root {
+    --indigo: #6C7CF0;
+    --indigo-2: #8B9CF7;
+    --teal: #2DD4BF;
+    --amber: #F2A93B;
+    --rose: #F472B6;
+    --green: #34D399;
+    --red: #F87171;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html[data-theme="dark"] {
+    --bg: #13111E;
+    --bg-2: #1E1A30;
+    --bg-3: #25203D;
+    --surface: rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.08);
+    --border: rgba(255,255,255,0.09);
+    --border-2: rgba(255,255,255,0.16);
+    --ink: #EFEAFB;
+    --ink-soft: #B8B2D6;
+    --slate: #8B87A3;
+    --slate-2: #6F6B8C;
+    --shadow: 0 18px 48px rgba(5,3,15,0.45);
+  }
+  html[data-theme="light"] {
+    --bg: #F7F5FB;
+    --bg-2: #FFFFFF;
+    --bg-3: #F0EDF7;
+    --surface: rgba(0,0,0,0.03);
+    --surface-2: rgba(0,0,0,0.06);
+    --border: rgba(0,0,0,0.08);
+    --border-2: rgba(0,0,0,0.16);
+    --ink: #1C1A29;
+    --ink-soft: #4A4660;
+    --slate: #6B6786;
+    --slate-2: #8B87A3;
+    --shadow: 0 18px 48px rgba(20,15,50,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  a { color: var(--indigo); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+
+  /* ===== NAVBAR ===== */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 700; font-size: 20px;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-logo {
+    width: 36px; height: 36px; border-radius: 10px; overflow: hidden;
+    background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--border);
+  }
+  .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a { color: var(--slate); font-size: 14px; font-weight: 500; transition: color .2s; text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); }
+  .nav-actions { display: flex; gap: 10px; align-items: center; }
+  .nav-cta {
+    padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-2)); color: #fff;
+    border: none; cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(108,124,240,0.45); text-decoration: none; color: #fff; }
+  .theme-btn {
+    background: var(--surface); border: 1px solid var(--border); color: var(--ink);
+    width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 16px;
+    display: grid; place-items: center; transition: background .2s, transform .2s;
+  }
+  .theme-btn:hover { background: var(--surface-2); transform: translateY(-1px); }
+  .hamburger {
+    display: none; background: var(--surface); border: 1px solid var(--border); color: var(--ink);
+    width: 38px; height: 38px; border-radius: 10px; cursor: pointer; font-size: 18px;
+    align-items: center; justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  .mobile-menu {
+    display: none; flex-direction: column; gap: 4px;
+    background: var(--bg-2); border-bottom: 1px solid var(--border);
+    padding: 12px 24px 16px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--ink-soft); font-size: 15px; font-weight: 500; padding: 10px 12px;
+    border-radius: 10px; transition: background .2s, color .2s; text-decoration: none;
+  }
+  .mobile-menu a:hover { background: var(--surface-2); color: var(--ink); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative; padding: 72px 24px 56px; text-align: center; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(500px circle at 20% 30%, rgba(108,124,240,0.18), transparent 50%),
+      radial-gradient(500px circle at 80% 20%, rgba(45,212,191,0.12), transparent 50%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    background: var(--surface); border: 1px solid var(--border); color: var(--slate);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 54px); font-weight: 800; letter-spacing: -1.5px;
+    line-height: 1.08; margin-bottom: 18px;
+    background: linear-gradient(135deg, var(--ink) 40%, var(--indigo-2) 70%, var(--teal));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p { font-size: 16px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; }
+  .last-updated {
+    display: inline-block; margin-top: 14px; padding: 5px 14px; border-radius: 999px;
+    background: rgba(108,124,240,0.1); border: 1px solid rgba(108,124,240,0.25);
+    font-size: 12px; color: var(--indigo-2); font-weight: 600;
+  }
+
+  /* ===== CONTENT ===== */
+  .container {
+    max-width: 860px; margin: 0 auto; padding: 48px 24px 80px;
+  }
+  .toc {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 28px 30px; margin-bottom: 48px;
+  }
+  .toc h3 {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--indigo-2); margin-bottom: 16px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 8px; }
+  .toc a { color: var(--ink-soft); font-size: 14px; transition: color .2s; }
+  .toc a:hover { color: var(--indigo); text-decoration: none; }
+
+  .section-block { margin-bottom: 52px; }
+  .section-block h2 {
+    font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); font-weight: 800;
+    letter-spacing: -0.5px; margin-bottom: 16px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--border); color: var(--ink);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-block h2 .sec-icon {
+    width: 36px; height: 36px; border-radius: 10px; background: rgba(108,124,240,0.12);
+    border: 1px solid rgba(108,124,240,0.2); display: grid; place-items: center; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-block h3 {
+    font-size: 17px; font-weight: 700; margin: 24px 0 10px; color: var(--ink);
+  }
+  .section-block p {
+    color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; line-height: 1.75;
+  }
+  .section-block ul, .section-block ol {
+    padding-left: 22px; margin-bottom: 14px;
+  }
+  .section-block li {
+    color: var(--ink-soft); font-size: 15px; margin-bottom: 8px; line-height: 1.7;
+  }
+  .highlight-box {
+    background: rgba(108,124,240,0.08); border: 1px solid rgba(108,124,240,0.2);
+    border-left: 3px solid var(--indigo); border-radius: var(--radius-sm);
+    padding: 18px 20px; margin: 18px 0; font-size: 14px; color: var(--ink-soft);
+  }
+  .highlight-box strong { color: var(--ink); }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    padding: 60px 24px 32px;
+  }
+  .footer-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.8fr repeat(3, 1fr); gap: 48px;
+  }
+  .footer-brand .logo-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+  }
+  .footer-brand .logo-wrap {
+    width: 38px; height: 38px; border-radius: 10px; overflow: hidden;
+    background: var(--bg-3); border: 1px solid var(--border);
+  }
+  .footer-brand .logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .footer-brand .brand-name {
+    font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--ink);
+  }
+  .footer-brand p { color: var(--slate); font-size: 13.5px; line-height: 1.7; max-width: 260px; }
+  .footer-brand .social-row { display: flex; gap: 10px; margin-top: 18px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 10px; background: var(--surface);
+    border: 1px solid var(--border); display: grid; place-items: center;
+    color: var(--slate); font-size: 15px; transition: background .2s, color .2s, transform .2s;
+    text-decoration: none;
+  }
+  .social-btn:hover { background: var(--surface-2); color: var(--ink); transform: translateY(-2px); }
+
+  .footer-col h4 {
+    font-family: var(--font-display); font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--slate-2); margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: var(--slate); font-size: 14px; transition: color .2s; text-decoration: none;
+  }
+  .footer-col a:hover { color: var(--ink); }
+
+  .footer-bottom {
+    max-width: 1180px; margin: 40px auto 0;
+    padding-top: 24px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { color: var(--slate-2); font-size: 13px; }
+  .footer-bottom .legal-links { display: flex; gap: 20px; }
+  .footer-bottom .legal-links a { color: var(--slate-2); font-size: 13px; transition: color .2s; text-decoration: none; }
+  .footer-bottom .legal-links a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  }
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-bottom .legal-links { justify-content: center; flex-wrap: wrap; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo"><img src="favicons/logo1.webp" alt="Setu Logo"></div>
+    Setu
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="How_It_Works.html">How It Works</a>
+    <a href="feature.html">Features</a>
+    <a href="setu_contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-btn" id="themeBtn" title="Toggle theme">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <a href="setu.html" class="nav-cta">Open App</a>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="How_It_Works.html">How It Works</a>
+  <a href="feature.html">Features</a>
+  <a href="setu_contact.html">Contact</a>
+  <a href="faq.html">FAQ</a>
+  <a href="setu.html">Open App →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🔒 Privacy First</div>
+  <h1>Privacy Policy</h1>
+  <p>We believe privacy is a fundamental right. Here's exactly how we handle your data — no legal jargon, just plain language.</p>
+  <span class="last-updated">Last Updated: July 2025</span>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h3>📋 Table of Contents</h3>
+    <ol>
+      <li><a href="#info-collect">Information We Collect</a></li>
+      <li><a href="#how-use">How We Use Your Information</a></li>
+      <li><a href="#data-storage">Data Storage & Security</a></li>
+      <li><a href="#cookies">Cookies & Tracking</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#your-rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <div class="highlight-box">
+    <strong>TL;DR:</strong> We collect only what's necessary to run Setu. Your files are encrypted client-side before upload. Chat messages are not stored. You control your data.
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section-block" id="info-collect">
+    <h2><span class="sec-icon">📦</span> 1. Information We Collect</h2>
+    <h3>1.1 Information You Provide</h3>
+    <p>When you create an account on Setu, we collect:</p>
+    <ul>
+      <li><strong>Name</strong> — to identify you within rooms and on your profile card.</li>
+      <li><strong>Email address</strong> — for authentication and account recovery.</li>
+      <li><strong>Nickname</strong> (optional) — a display name for rooms.</li>
+      <li><strong>Phone number</strong> (optional) — stored on your profile but never shared publicly.</li>
+      <li><strong>Country</strong> (optional) — for profile personalization only.</li>
+      <li><strong>Password</strong> — hashed with PBKDF2-SHA256 (100,000 iterations + salt). We never store your raw password.</li>
+    </ul>
+
+    <h3>1.2 Information Generated Automatically</h3>
+    <p>When you use Setu, we may automatically collect:</p>
+    <ul>
+      <li><strong>IP address</strong> — for rate limiting and abuse prevention (not stored long-term).</li>
+      <li><strong>Browser/device type</strong> — for analytics and compatibility.</li>
+      <li><strong>Usage data</strong> — page visits, feature interactions (via Google Analytics, anonymized).</li>
+      <li><strong>Transfer codes & room IDs</strong> — ephemeral identifiers that expire automatically.</li>
+    </ul>
+
+    <h3>1.3 Files You Transfer</h3>
+    <p>Files uploaded via the QR Transfer feature are:</p>
+    <ul>
+      <li>Encrypted client-side with AES-256-GCM <strong>before</strong> leaving your browser.</li>
+      <li>Stored as encrypted chunks on our servers; we cannot read their contents.</li>
+      <li>Automatically deleted after 7 minutes or upon single download (if one-time mode is enabled).</li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section-block" id="how-use">
+    <h2><span class="sec-icon">⚙️</span> 2. How We Use Your Information</h2>
+    <p>We use collected information <strong>only</strong> for the following purposes:</p>
+    <ul>
+      <li>To authenticate you and maintain your session securely (JWT tokens).</li>
+      <li>To display your profile card and room membership within Setu rooms.</li>
+      <li>To enable file transfer and real-time collaboration features.</li>
+      <li>To improve the platform through aggregated, anonymized analytics.</li>
+      <li>To respond to your support requests and feedback submissions.</li>
+      <li>To enforce our Terms & Conditions and prevent abuse.</li>
+    </ul>
+    <div class="highlight-box">
+      We do <strong>not</strong> sell, rent, or trade your personal information to any third party for marketing purposes.
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section-block" id="data-storage">
+    <h2><span class="sec-icon">🔐</span> 3. Data Storage & Security</h2>
+    <p>We implement multiple layers of security to protect your data:</p>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All communications between your browser and our servers use HTTPS/TLS.</li>
+      <li><strong>Encryption at rest:</strong> Files are encrypted before upload; the decryption key is wrapped and stored separately from the encrypted chunks.</li>
+      <li><strong>Password hashing:</strong> PBKDF2-SHA256 with 100,000 iterations and a random salt — verified with constant-time comparison.</li>
+      <li><strong>JWT authentication:</strong> Short-lived tokens with automatic expiry.</li>
+      <li><strong>Auto-expiry:</strong> File transfer links expire after 7 minutes; one-time download links expire after a single use.</li>
+    </ul>
+    <p>Account profile data (name, email, nickname, phone, country) is stored in our secured database and is not publicly accessible.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section-block" id="cookies">
+    <h2><span class="sec-icon">🍪</span> 4. Cookies & Tracking</h2>
+    <p>Setu uses minimal tracking technologies:</p>
+    <ul>
+      <li><strong>localStorage:</strong> We use browser localStorage to remember your theme preference (dark/light mode) and maintain authentication state. This data never leaves your device.</li>
+      <li><strong>Google Analytics:</strong> We use anonymized Google Analytics to understand how users interact with the platform. No personally identifiable information is sent to Google Analytics.</li>
+      <li><strong>No advertising cookies:</strong> We do not use cookies for advertising, retargeting, or cross-site tracking.</li>
+    </ul>
+    <p>You can disable cookies in your browser settings; this may affect some functionality (e.g., theme persistence).</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section-block" id="sharing">
+    <h2><span class="sec-icon">🤝</span> 5. Data Sharing</h2>
+    <p>We do not share your personal data with third parties, except in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Service providers:</strong> We use infrastructure providers (e.g., cloud hosting, CDN) who process data solely on our behalf under data processing agreements.</li>
+      <li><strong>Legal compliance:</strong> We may disclose data if required by law, court order, or to protect the safety of users or the public.</li>
+      <li><strong>Business transfer:</strong> In the unlikely event of a merger or acquisition, your data may be transferred — you will be notified in advance.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Room members:</strong> When you join a Setu room, your display name/nickname is visible to other room members. This is intentional and necessary for collaboration.
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section-block" id="your-rights">
+    <h2><span class="sec-icon">⚖️</span> 6. Your Rights</h2>
+    <p>You have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
+      <li><strong>Deletion:</strong> Request deletion of your account and associated personal data.</li>
+      <li><strong>Portability:</strong> Request your data in a machine-readable format.</li>
+      <li><strong>Withdrawal of consent:</strong> You may stop using the service at any time.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="setu_contact.html">our contact page</a>.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section-block" id="children">
+    <h2><span class="sec-icon">👶</span> 7. Children's Privacy</h2>
+    <p>Setu is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal data, please contact us immediately and we will delete that information.</p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section-block" id="changes">
+    <h2><span class="sec-icon">📝</span> 8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will:</p>
+    <ul>
+      <li>Update the "Last Updated" date at the top of this page.</li>
+      <li>Notify users of significant changes via the platform or email (if registered).</li>
+    </ul>
+    <p>Continued use of Setu after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section-block" id="contact">
+    <h2><span class="sec-icon">📬</span> 9. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out:</p>
+    <ul>
+      <li><strong>Contact Form:</strong> <a href="setu_contact.html">setusync.space/setu_contact.html</a></li>
+      <li><strong>Platform:</strong> Setu — Real-time Collaboration Bridge</li>
+      <li><strong>Built in:</strong> India 🇮🇳</li>
+    </ul>
+    <div class="highlight-box">
+      We aim to respond to all privacy-related requests within <strong>30 days</strong>.
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-row">
+        <div class="logo-wrap"><img src="favicons/logo1.webp" alt="Setu Logo"></div>
+        <span class="brand-name">Setu</span>
+      </div>
+      <p>Real-time collaboration platform — bridge the gap. Share files, chat, and collaborate instantly, from any browser.</p>
+      <div class="social-row">
+        <a href="https://github.com/Infinity0-0/Setu_Bridge.git" class="social-btn" target="_blank" rel="noopener" title="GitHub">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="setu.html">Open App</a></li>
+        <li><a href="How_It_Works.html">How It Works</a></li>
+        <li><a href="feature.html">Features</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="setu_contact.html">Contact Us</a></li>
+        <li><a href="How_It_Works.html#security">Security</a></li>
+        <li><a href="How_It_Works.html#privacy">Data Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Setu-Bridge. Built with ❤️ in India.</p>
+    <div class="legal-links">
+      <a href="privacy_policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="faq.html">FAQ</a>
+      <a href="setu_contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('themeBtn');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('setu-theme') || 'light';
+  html.setAttribute('data-theme', saved);
+  themeBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
+  themeBtn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('setu-theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+</script>
+</body>
+</html>

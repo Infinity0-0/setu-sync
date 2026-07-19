@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setu · Contact & Feedback</title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+
+<meta name="theme-color" content="#1C1A29">
+<meta name="description" content="Setu — a real-time collaboration bridge. Send us your issues, ideas, and feedback.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<!-- X / Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://setusync.space/contact.html">
+<meta name="twitter:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+<meta name="twitter:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+<meta name="twitter:image" content="https://setusync.space/favicons/logo1.webp">
+
+ <!-- Meta tag -->
+    <title>Setu Contact: Get Help, Report Issues & Share Ideas</title>
+    <meta name="description" content="Reach the Setu Bridge team for technical support, product feedback, collaboration ideas, and feature suggestions to help shape the future of Setu.">
+    <meta name="keywords" content="Setu, setu login/signup, file sharing, setusync, contact, feedback">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/contact.html">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu Contact: Get Help, Report Issues & Share Ideas">
+    <meta property="og:description" content="Reach the Setu Bridge team for technical support, product feedback, collaboration ideas, and feature suggestions to help shape the future of Setu.">
+    <meta property="og:url" content="https://setusync.space/contact.html">
+    <meta property="og:site_name" content="सेतु-Connect with the world">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+
+<style>
+  /* ============ TOKENS (matches setu.html / feature.html) ============ */
+  :root{
+    --indigo:#6C7CF0;
+    --indigo-2:#8B9CF7;
+    --indigo-deep:#4F3CC9;
+    --teal:#2DD4BF;
+    --amber:#F2A93B;
+    --rose:#F472B6;
+    --green:#34D399;
+    --red:#F87171;
+    --radius-lg:18px;
+    --radius-md:12px;
+    --radius-sm:8px;
+    --font-display:'Sora',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+  html[data-theme="dark"]{
+    --bg:#13111E;
+    --bg-2:#1E1A30;
+    --bg-3:#25203D;
+    --surface:rgba(255,255,255,0.04);
+    --surface-2:rgba(255,255,255,0.08);
+    --border:rgba(255,255,255,0.09);
+    --border-2:rgba(255,255,255,0.16);
+    --ink:#EFEAFB;
+    --ink-soft:#B8B2D6;
+    --slate:#8B87A3;
+    --slate-2:#6F6B8C;
+    --shadow:0 18px 48px rgba(5,3,15,0.45);
+    --shadow-soft:0 8px 24px rgba(0,0,0,0.25);
+    --overlay:rgba(5,3,15,0.62);
+  }
+  html[data-theme="light"]{
+    --bg:#F7F5FB;
+    --bg-2:#FFFFFF;
+    --bg-3:#F0EDF7;
+    --surface:rgba(0,0,0,0.03);
+    --surface-2:rgba(0,0,0,0.06);
+    --border:rgba(0,0,0,0.08);
+    --border-2:rgba(0,0,0,0.16);
+    --ink:#1C1A29;
+    --ink-soft:#4A4660;
+    --slate:#6B6786;
+    --slate-2:#8B87A3;
+    --shadow:0 18px 48px rgba(20,15,50,0.14);
+    --shadow-soft:0 8px 24px rgba(20,15,50,0.08);
+    --overlay:rgba(28,22,55,0.45);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--amber);color:#1C1A29;}
+  ::-webkit-scrollbar{width:10px;height:10px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px;border:2px solid transparent;background-clip:padding-box;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--border-2);background-clip:padding-box;}
+  :focus-visible{outline:2px solid var(--indigo);outline-offset:2px;}
+
+  /* ============ NAVBAR ============ */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent);
+    border-bottom:1px solid var(--border);
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-brand{
+    display:flex;align-items:center;gap:12px;
+    font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-0.5px;
+  }
+  .nav-logo{
+    width:34px;height:34px;border-radius:10px;overflow:hidden;
+    display:grid;place-items:center;background:var(--bg-2);
+    box-shadow:inset 0 0 0 1px var(--border);
+  }
+  .nav-logo img{width:100%;height:100%;object-fit:cover;}
+  .nav-links{display:flex;gap:26px;align-items:center;}
+  .nav-links a{color:var(--slate);font-size:14px;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a.active{color:var(--ink);}
+  .nav-actions{display:flex;gap:10px;align-items:center;}
+  .nav-cta{
+    padding:9px 18px;border-radius:999px;font-size:14px;font-weight:600;
+    background:linear-gradient(135deg,var(--indigo),var(--indigo-2));color:#fff;
+    border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(108,124,240,0.45);}
+  .theme-btn{
+    background:var(--surface);border:1px solid var(--border);color:var(--ink);
+    width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px;
+    display:grid;place-items:center;transition:background .2s,transform .2s;
+  }
+  .theme-btn:hover{background:var(--surface-2);transform:translateY(-1px);}
+  @media (max-width:768px){.nav-links{display:none;}}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;padding:80px 24px 60px;text-align:center;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(620px circle at 18% 18%,rgba(108,124,240,0.20),transparent 50%),
+      radial-gradient(620px circle at 82% 26%,rgba(45,212,191,0.16),transparent 50%),
+      radial-gradient(800px circle at 50% 92%,rgba(242,169,59,0.12),transparent 50%);
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;
+    background:var(--surface);border:1px solid var(--border);color:var(--slate);
+    margin-bottom:26px;
+  }
+  .hero-badge .dot{
+    width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 10px var(--green);animation:beat 2s infinite;
+  }
+  @keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,0.5);}50%{box-shadow:0 0 0 8px transparent;}}
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(36px,6vw,64px);font-weight:800;letter-spacing:-2px;
+    line-height:1.06;margin-bottom:20px;
+    background:linear-gradient(135deg,var(--ink) 30%,var(--indigo-2) 65%,var(--teal));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero p{
+    font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:620px;margin:0 auto;
+  }
+
+  /* ============ ABOUT SECTION (with cards) ============ */
+  .section{padding:64px 24px;max-width:1180px;margin:0 auto;}
+  .section-head{text-align:center;margin-bottom:48px;}
+  .section-tag{
+    display:inline-block;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:1px;color:var(--indigo-2);
+    background:rgba(108,124,240,0.12);border:1px solid rgba(108,124,240,0.25);margin-bottom:14px;
+  }
+  .section h2{
+    font-family:var(--font-display);
+    font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;
+  }
+  .section-sub{color:var(--ink-soft);font-size:16px;max-width:620px;margin:0 auto;}
+
+  .feature-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+    margin-bottom:36px;
+  }
+  .feat-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:24px 22px;transition:transform .25s,border-color .25s,background .25s;
+    position:relative;overflow:hidden;
+  }
+  .feat-card:hover{transform:translateY(-4px);border-color:var(--border-2);background:var(--surface-2);}
+  .feat-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--indigo),var(--teal));opacity:0;transition:opacity .25s;
+  }
+  .feat-card:hover::before{opacity:1;}
+  .feat-ic{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;
+    margin-bottom:14px;background:var(--surface-2);border:1px solid var(--border);
+  }
+  .feat-card h3{font-family:var(--font-display);font-size:17px;font-weight:700;margin-bottom:8px;}
+  .feat-card p{color:var(--slate);font-size:14px;line-height:1.6;}
+
+  /* Stats strip */
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;
+    margin:0 0 8px;
+  }
+  .stat{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:24px 18px;text-align:center;
+  }
+  .stat-num{
+    font-family:var(--font-display);font-size:30px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px;
+  }
+  .stat-num.indigo{color:var(--indigo-2);}
+  .stat-num.teal{color:var(--teal);}
+  .stat-num.amber{color:var(--amber);}
+  .stat-num.rose{color:var(--rose);}
+  .stat-label{color:var(--slate);font-size:12.5px;font-weight:500;}
+
+  /* ============ CONTACT SECTION ============ */
+  .contact-wrap{
+    max-width:1080px;margin:0 auto;padding:0 24px 80px;
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:32px;align-items:start;
+  }
+  @media (max-width:860px){.contact-wrap{grid-template-columns:1fr;}}
+
+  .contact-left{position:relative;}
+  .left-badge{
+    display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;
+    font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+    color:var(--teal);background:rgba(45,212,191,0.12);border:1px solid rgba(45,212,191,0.25);
+    margin-bottom:16px;
+  }
+  .contact-left h2{
+    font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1px;margin-bottom:14px;
+  }
+  .contact-left p{color:var(--ink-soft);font-size:16px;margin-bottom:26px;}
+  .info-list{display:flex;flex-direction:column;gap:14px;}
+  .info-row{
+    display:flex;align-items:flex-start;gap:14px;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:14px 16px;
+  }
+  .info-ic{
+    width:40px;height:40px;border-radius:10px;flex-shrink:0;display:grid;place-items:center;font-size:18px;
+    background:linear-gradient(135deg,rgba(108,124,240,0.2),rgba(45,212,191,0.18));
+    border:1px solid var(--border);
+  }
+  .info-txt{display:flex;flex-direction:column;}
+  .info-label{font-size:11px;color:var(--slate);text-transform:uppercase;letter-spacing:0.6px;font-weight:600;}
+  .info-val{font-size:14px;color:var(--ink);font-weight:500;word-break:break-word;}
+
+  /* ============ FORM CARD ============ */
+  .form-card{
+    background:var(--bg-2);border:1px solid var(--border-2);border-radius:var(--radius-lg);
+    padding:30px 28px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .form-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--indigo),var(--teal),var(--amber));
+  }
+  .form-head{display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+  .form-head .em{font-size:24px;}
+  .form-head h3{font-family:var(--font-display);font-size:20px;font-weight:700;}
+  .form-head p{font-size:12.5px;color:var(--slate);margin-top:2px;}
+
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:7px;
+    letter-spacing:0.2px;
+  }
+  .field label .req{color:var(--rose);font-weight:700;}
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;padding:12px 14px;border-radius:var(--radius-sm);
+    background:var(--bg-3);border:1.5px solid var(--border);color:var(--ink);font-size:14px;
+    font-family:var(--font-body);outline:none;transition:border-color .2s,box-shadow .2s,background .2s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:var(--slate-2);}
+  .field textarea{resize:vertical;min-height:130px;line-height:1.55;}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    border-color:var(--indigo);box-shadow:0 0 0 3px rgba(108,124,240,0.18);background:var(--bg-2);
+  }
+  .field select{
+    appearance:none;-webkit-appearance:none;-moz-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238B87A3' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;background-size:14px;
+    padding-right:38px;cursor:pointer;
+  }
+  .field select option{background:var(--bg-2);color:var(--ink);}
+
+  /* Type option chips (visual enhancement over select) */
+  .type-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px;}
+  .chip{
+    display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;
+    padding:12px 8px;border:1.5px solid var(--border);border-radius:var(--radius-md);
+    background:var(--bg-3);cursor:pointer;transition:transform .15s,border-color .15s,background .15s;
+    user-select:none;
+  }
+  .chip:hover{transform:translateY(-1px);border-color:var(--border-2);}
+  .chip .em{font-size:22px;}
+  .chip .lbl{font-size:12px;font-weight:600;color:var(--ink-soft);}
+  .chip[data-active="true"]{
+    border-color:var(--indigo);background:rgba(108,124,240,0.12);
+    box-shadow:0 0 0 3px rgba(108,124,240,0.16);
+  }
+  .chip[data-active="true"] .lbl{color:var(--ink);}
+  .chip[data-active="true"] .em{transform:scale(1.05);}
+  .helper{font-size:11.5px;color:var(--slate);margin-top:8px;}
+
+  .submit-btn{
+    width:100%;padding:15px;border-radius:999px;border:none;cursor:pointer;
+    font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:0.3px;
+    background:linear-gradient(135deg,var(--indigo),var(--indigo-deep));color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;
+    position:relative;overflow:hidden;
+  }
+  .submit-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.18),transparent);pointer-events:none;}
+  .submit-btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 14px 34px rgba(79,60,201,0.45);}
+  .submit-btn:active{transform:translateY(0) scale(.985);}
+  .submit-btn:disabled{opacity:0.7;cursor:not-allowed;transform:none;}
+
+  /* Status messages */
+  .status{
+    display:none;align-items:center;gap:10px;margin-top:18px;padding:13px 16px;
+    border-radius:var(--radius-md);font-size:13.5px;font-weight:500;
+  }
+  .status.show{display:flex;animation:fadeUp .3s ease;}
+  .status.success{background:rgba(52,211,153,0.12);color:var(--green);border:1px solid rgba(52,211,153,0.28);}
+  .status.error{background:rgba(248,113,113,0.12);color:var(--red);border:1px solid rgba(248,113,113,0.28);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Toast */
+  .toast{
+    position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:var(--ink);color:var(--bg);padding:11px 20px;border-radius:999px;
+    font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.25s ease;z-index:80;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ============ FOOTER ============ */
+  .footer{
+    border-top:1px solid var(--border);padding:34px 24px;text-align:center;color:var(--slate-2);font-size:14px;
+  }
+  .footer .brand-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
+  .footer .brand-row .nav-logo{width:30px;height:30px;border-radius:8px;}
+  .footer .brand-row strong{font-family:var(--font-display);font-size:16px;color:var(--ink);}
+  .footer a{color:var(--slate);}
+  .footer a:hover{color:var(--ink);}
+  .footer .links{display:flex;gap:18px;justify-content:center;margin:10px 0 14px;flex-wrap:wrap;}
+
+  /* reveal anim */
+  .reveal{opacity:0;}
+  .reveal.in{animation:fadeUp .6s ease forwards;}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-logo"><img src="favicons/favicon.svg" alt="Setu Logo"></span>
+    Setu
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="feature.html">Features</a>
+    <a href="How_It_Works.html">How It Works</a>
+    <a href="setu.html">Open App</a>
+    <a href="setu_contact.html" class="active">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+    <a href="index.html"><button class="nav-cta">Launch Setu →</button></a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-badge"><span class="dot"></span> The bridge between you & seamless collaboration</div>
+  <h1>Talk to the<br>Setu Bridge team</h1>
+  <p>Have an issue, an idea, or a suggestion to make Setu better? This is your direct line — drop a message and it lands straight in our inbox.</p>
+</header>
+
+<!-- ============ ABOUT SETU ============ -->
+<section class="section" id="about">
+  <div class="section-head">
+    <span class="section-tag">About Setu</span>
+    <h2>What is Setu?</h2>
+    <p class="section-sub">Setu — meaning “bridge” in Sanskrit — is a real-time collaboration platform that connects people through chat, file sharing, and a shared whiteboard, all inside your browser. No installs, no friction, just connect.</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feat-card reveal">
+      <div class="feat-ic">💬</div>
+      <h3>Live Chat</h3>
+      <p>Real-time messaging with replies, edits, unsend, and smart context menus — a modern messenger built right in.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-ic">📁</div>
+      <h3>P2P File Sharing</h3>
+      <p>Send files & folders directly to peers — no server storage, no limits. Plus QR-code transfers that auto-delete in 7 minutes.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-ic">🎨</div>
+      <h3>Shared Whiteboard</h3>
+      <p>Brainstorm, sketch, and diagram together on a live Excalidraw-powered canvas that syncs to every room member instantly.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-ic">🔗</div>
+      <h3>Instant Rooms</h3>
+      <p>Create or join a room in seconds with an 8-character code, a QR code, or a shareable link — auto-reconnect keeps you linked.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-ic">🔐</div>
+      <h3>Secure by Design</h3>
+      <p>JWT auth, encrypted transit, and optional password-protected transfers keep your conversations and files private.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-ic">📱</div>
+      <h3>Works Everywhere</h3>
+      <p>A responsive, installable PWA with dark & light themes — beautiful on phones, tablets, and desktops alike.</p>
+    </div>
+  </div>
+
+  <div class="stats reveal">
+    <div class="stat"><div class="stat-num indigo">8-char</div><div class="stat-label">Instant Room Codes</div></div>
+    <div class="stat"><div class="stat-num teal">P2P</div><div class="stat-label">Direct File Transfer</div></div>
+    <div class="stat"><div class="stat-num amber">7 min</div><div class="stat-label">QR Auto-Delete</div></div>
+    <div class="stat"><div class="stat-num rose">E2E</div><div class="stat-label">Encrypted Messaging</div></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT SECTION ============ -->
+<section class="section" id="contact" style="padding-top:0;">
+  <div class="section-head">
+    <span class="section-tag">Get in Touch</span>
+    <h2>We’d love to hear from you</h2>
+    <p class="section-sub">Spotted a bug? Have a feature idea? Want to suggest an improvement? Fill the form — your message reaches the Setu Bridge team directly via email.</p>
+  </div>
+
+  <div class="contact-wrap">
+    <!-- LEFT: info -->
+    <div class="contact-left reveal">
+      <span class="left-badge">📩 Direct Line</span>
+      <h2>Your voice shapes Setu</h2>
+      <p>Every message sent here is read by the team. Whether it’s a tiny glitch or a big idea — share it, and help us make Setu smoother, faster, and more useful for everyone on the bridge.</p>
+
+      <div class="info-list">
+        <div class="info-row">
+          <div class="info-ic">🚀</div>
+          <div class="info-txt">
+            <span class="info-label">Where it reaches</span>
+            <span class="info-val">gyanifever@gmail.com — Setu Bridge Team</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ic">⏱️</div>
+          <div class="info-txt">
+            <span class="info-label">Response time</span>
+            <span class="info-val">Usually within 24–48 hours</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ic">🌍</div>
+          <div class="info-txt">
+            <span class="info-label">Source tag</span>
+            <span class="info-val">Every email is tagged “From Setu Bridge” so we know it’s you</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ic">🔒</div>
+          <div class="info-txt">
+            <span class="info-label">Privacy</span>
+            <span class="info-val">Your details are used only to reply — never shared or spammed.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <form class="form-card reveal" id="contactForm" autocomplete="on">
+      <div class="form-head">
+        <span class="em">📨</span>
+        <div>
+          <h3>Send us a message</h3>
+          <p>Fill in the details below and hit send</p>
+        </div>
+      </div>
+
+      <!-- Name -->
+      <div class="field">
+        <label for="name">Name <span class="req">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your name" required maxlength="80" autocomplete="name">
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email ID <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required maxlength="120" autocomplete="email">
+      </div>
+
+      <!-- Type (select + visual chips) -->
+      <div class="field">
+        <label for="type">Type of message <span class="req">*</span></label>
+        <div class="type-chips" id="typeChips">
+          <div class="chip" data-type="Issue / Problem" data-active="false">
+            <span class="em">🐞</span><span class="lbl">Issue / Problem</span>
+          </div>
+          <div class="chip" data-type="Idea / Improvement" data-active="false">
+            <span class="em">💡</span><span class="lbl">Idea / Improvement</span>
+          </div>
+          <div class="chip" data-type="Other" data-active="false">
+            <span class="em">✍️</span><span class="lbl">Other</span>
+          </div>
+        </div>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>Select a category…</option>
+          <option value="Issue / Problem">Issue / Problem</option>
+          <option value="Idea / Improvement">Idea / Improvement</option>
+          <option value="Other">Other</option>
+        </select>
+        <p class="helper">Choose what your message is about — helps us route it faster.</p>
+      </div>
+
+      <!-- Message -->
+      <div class="field">
+        <label for="message">Message <span class="req">*</span></label>
+        <textarea id="message" name="message" placeholder="Describe your issue, idea, or suggestion in detail…" required minlength="10" maxlength="3000"></textarea>
+      </div>
+
+      <!-- Hidden fields for email tagging -->
+      <input type="hidden" name="_source" value="Setu Bridge">
+      <input type="hidden" name="_subject" id="subjectField" value="📨 New message from Setu Bridge">
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span id="btnText">✈️ Send Message</span>
+      </button>
+
+      <div class="status" id="statusBox"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:48px;padding:60px 24px 32px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div class="nav-logo" style="width:38px;height:38px;border-radius:10px;overflow:hidden;background:whitesmoke;border:1px solid var(--border);"><img src="favicons/logo1.webp" alt="Setu Logo" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span style="font-size:18px;font-weight:800;">Setu</span>
+      </div>
+      <p style="color:var(--slate);font-size:13.5px;line-height:1.7;max-width:260px;">Real-time collaboration platform — bridge the gap. Share files, chat, and collaborate instantly, from any browser.</p>
+      <div style="display:flex;gap:10px;margin-top:18px;">
+        <a href="https://github.com/Infinity0-0/Setu_Bridge.git" target="_blank" rel="noopener" title="GitHub" style="width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;color:var(--slate);transition:background .2s,color .2s,transform .2s;text-decoration:none;" onmouseover="this.style.background='var(--surface-2)';this.style.color='var(--ink)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--surface)';this.style.color='var(--slate)';this.style.transform='translateY(0)'">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Platform</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="index.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Home</a></li>
+        <li style="margin-bottom:10px;"><a href="setu.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Open App</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">How It Works</a></li>
+        <li style="margin-bottom:10px;"><a href="feature.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Features</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Support</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+        <li style="margin-bottom:10px;"><a href="setu_contact.html" style="color:var(--ink);font-size:14px;text-decoration:none;">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#security" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Security</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#privacy" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Data Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Legal</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="privacy_policy.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Privacy Policy</a></li>
+        <li style="margin-bottom:10px;"><a href="terms.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">Terms & Conditions</a></li>
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:24px 24px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <p style="color:var(--slate-2);font-size:13px;">© 2025 Setu-Bridge. Built with ❤️ in India.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="privacy_policy.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate-2)'">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate-2)'">Terms & Conditions</a>
+      <a href="faq.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate-2)'">FAQ</a>
+      <a href="setu_contact.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--slate-2)'">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ============ THEME TOGGLE ============ */
+  (function(){
+    const html = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('setu-theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('setu-theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  })();
+
+  /* ============ SCROLL REVEAL ============ */
+  (function(){
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  })();
+
+  /* ============ TYPE CHIPS ↔ SELECT SYNC ============ */
+  (function(){
+    const chips = document.querySelectorAll('#typeChips .chip');
+    const select = document.getElementById('type');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const type = chip.dataset.type;
+        chips.forEach(c => c.dataset.active = 'false');
+        chip.dataset.active = 'true';
+        select.value = type;
+        // update subject line to be more descriptive in the email
+        updateSubject();
+      });
+    });
+    select.addEventListener('change', () => {
+      chips.forEach(c => c.dataset.active = (c.dataset.type === select.value) ? 'true' : 'false');
+      updateSubject();
+    });
+    function updateSubject(){
+      const name = document.getElementById('name').value.trim();
+      const t = select.value || 'New message';
+      document.getElementById('subjectField').value =
+        '📨 [' + t + '] from Setu Bridge' + (name ? ' — ' + name : '');
+    }
+    document.getElementById('name').addEventListener('input', updateSubject);
+  })();
+
+  /* ============ TOAST ============ */
+  function toast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  /* ============ FORM SUBMIT → Internal API (Telegram Bot) ============ */
+  (function(){
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const statusBox = document.getElementById('statusBox');
+
+    function setStatus(kind, msg){
+      statusBox.className = 'status show ' + kind;
+      statusBox.innerHTML = msg;
+    }
+    function clearStatus(){ statusBox.className = 'status'; statusBox.innerHTML = ''; }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearStatus();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const type = form.type.value;
+      const message = form.message.value.trim();
+
+      if(!name || !email || !type || !message){
+        setStatus('error', '⚠️ Please fill in all fields before sending.');
+        return;
+      }
+      if(message.length < 10){
+        setStatus('error', '⚠️ Please add a little more detail (min 10 characters).');
+        return;
+      }
+
+      btn.disabled = true;
+      btnText.textContent = 'Sending…';
+
+      try {
+        const payload = {
+          name,
+          email,
+          type,
+          message
+        };
+
+        const res = await fetch('https://setu-backend-txdk.onrender.com/api/contact', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if(res.ok && data.ok){
+          setStatus('success', '✅ Message sent! The Setu Bridge team will get back to you soon.');
+          toast('Thanks ' + name.split(' ')[0] + '! Your message is on its way 🚀');
+          form.reset();
+          document.querySelectorAll('#typeChips .chip').forEach(c => c.dataset.active = 'false');
+        } else {
+          throw new Error(data.error || 'HTTP ' + res.status);
+        }
+      } catch(err){
+        setStatus('error', '⚠️ ' + (err.message || 'Could not send right now. Please try again in a moment.'));
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = '✈️ Send Message';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

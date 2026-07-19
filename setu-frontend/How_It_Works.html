@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setu — How It Works</title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+    <meta property="og:type" content="website">
+<!-- X / Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://setusync.space/how_it_works.html">
+<meta name="twitter:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+<meta name="twitter:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+<meta name="twitter:image" content="https://setusync.space/favicons/logo1.webp">
+
+ <!-- Meta tag -->
+    <title>How Setu Works | Fast, Secure File Sharing Made Simple</title>
+    <meta name="description" content="Learn how Setu makes secure file sharing so easy with QR codes, encrypted files, live rooms, chat, whiteboards, and more in your browser!">
+    <meta name="keywords" content="Setu, setu sync, file sharing, setusync, how it works setu, setu easy to use">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/how-it-works.html">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="How Setu Works">
+    <meta property="og:description" content="Explore Setu's secure file sharing, QR transfers, live chat, collaborative whiteboards, and real-time teamwork.">
+    <meta property="og:url" content="https://setusync.space/how-it-works.html">
+    <meta property="og:site_name" content="सेतु-Connect with the world">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+
+<meta name="theme-color" content="#1C1A29">
+
+<style>
+  :root {
+    --bg: #1C1A29;
+    --bg-2: #252238;
+    --bg-3: #2D2A45;
+    --surface: rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.09);
+    --border-2: rgba(255,255,255,0.14);
+    --text: #F5F5F7;
+    --slate: #A0A0B8;
+    --slate-2: #7A7A92;
+    --indigo: #6C7CF0;
+    --indigo-2: #8B9CF7;
+    --teal: #2DD4BF;
+    --amber: #F2A93B;
+    --rose: #F472B6;
+    --green: #34D399;
+    --red: #F87171;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 10px 40px rgba(0,0,0,0.35);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  [data-theme="light"] {
+    --bg: #F7F7FB;
+    --bg-2: #FFFFFF;
+    --bg-3: #F0F0F6;
+    --surface: rgba(0,0,0,0.03);
+    --surface-2: rgba(0,0,0,0.06);
+    --border: rgba(0,0,0,0.08);
+    --border-2: rgba(0,0,0,0.14);
+    --text: #1C1A29;
+    --slate: #5A5A72;
+    --slate-2: #8A8AA0;
+    --shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== NAVBAR ===== */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 20px; letter-spacing: -0.5px;
+  }
+  .nav-logo { width: 48px; height: 48px; border-radius: 10px; overflow: hidden; }
+  .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--slate); font-size: 14px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-cta {
+    padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-2));
+    color: #fff; border: none; cursor: pointer; transition: transform .2s, box-shadow .2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(108,124,240,0.4); }
+  .theme-btn {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 16px;
+    display: grid; place-items: center; transition: background .2s;
+  }
+  .theme-btn:hover { background: var(--surface-2); }
+  @media (max-width: 768px) { .nav-links { display: none; } }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 90px 24px 70px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(600px circle at 20% 20%, rgba(108,124,240,0.18), transparent 50%),
+      radial-gradient(600px circle at 80% 30%, rgba(45,212,191,0.15), transparent 50%),
+      radial-gradient(800px circle at 50% 90%, rgba(244,114,182,0.10), transparent 50%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    background: var(--surface); border: 1px solid var(--border); color: var(--slate);
+    margin-bottom: 28px;
+  }
+  .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 64px); font-weight: 800; letter-spacing: -2px;
+    line-height: 1.05; margin-bottom: 22px;
+    background: linear-gradient(135deg, var(--text) 30%, var(--indigo-2) 70%, var(--teal));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 20px); color: var(--slate); max-width: 680px; margin: 0 auto 36px;
+  }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary, .btn-ghost {
+    padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer;
+    border: none; transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--indigo), var(--indigo-2)); color: #fff; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108,124,240,0.45); }
+  .btn-ghost { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+  .btn-ghost:hover { background: var(--surface-2); }
+
+  /* ===== SECTION ===== */
+  .section { padding: 70px 24px; max-width: 1200px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .section-tag {
+    display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--indigo-2);
+    background: rgba(108,124,240,0.12); border: 1px solid rgba(108,124,240,0.25); margin-bottom: 16px;
+  }
+  .section h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+  .section-sub { color: var(--slate); font-size: 17px; max-width: 640px; margin: 0 auto; }
+
+  /* ===== STEP CARDS ===== */
+  .steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px;
+  }
+  .step {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 30px 26px; position: relative; transition: transform .25s, border-color .25s, background .25s;
+  }
+  .step:hover { transform: translateY(-4px); border-color: var(--border-2); background: var(--surface-2); }
+  .step-num {
+    position: absolute; top: 22px; right: 24px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-2)); color: #fff;
+    display: grid; place-items: center; font-weight: 800; font-size: 16px;
+  }
+  .step-icon { font-size: 34px; margin-bottom: 16px; }
+  .step h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+  .step p { color: var(--slate); font-size: 14.5px; line-height: 1.65; }
+
+  /* ===== DIAGRAM BLOCK ===== */
+  .diagram-wrap {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 36px; box-shadow: var(--shadow); overflow-x: auto;
+  }
+  .diagram-wrap svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+  .diagram-caption { text-align: center; color: var(--slate); font-size: 14px; margin-top: 18px; }
+
+  /* ===== FEATURE BLOCK ===== */
+  .feature-block {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    margin-bottom: 70px;
+  }
+  .feature-block:nth-child(even) .feature-visual { order: 2; }
+  @media (max-width: 860px) {
+    .feature-block { grid-template-columns: 1fr; }
+    .feature-block:nth-child(even) .feature-visual { order: 0; }
+  }
+  .feature-text h3 { font-size: 26px; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.5px; }
+  .feature-text p { color: var(--slate); font-size: 16px; margin-bottom: 18px; }
+  .feature-text ul { list-style: none; }
+  .feature-text ul li {
+    padding: 9px 0 9px 30px; position: relative; color: var(--text); font-size: 15px;
+  }
+  .feature-text ul li::before {
+    content: ''; position: absolute; left: 0; top: 13px; width: 18px; height: 18px;
+    border-radius: 50%; background: rgba(45,212,191,0.15); border: 2px solid var(--teal);
+  }
+  .feature-text ul li::after {
+    content: ''; position: absolute; left: 6px; top: 18px; width: 6px; height: 3px;
+    border-left: 2px solid var(--teal); border-bottom: 2px solid var(--teal); transform: rotate(-45deg);
+  }
+  .feature-visual {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 30px; min-height: 300px; display: flex; flex-direction: column; gap: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ===== GRID ===== */
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px 26px; transition: transform .25s, border-color .25s, background .25s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--border-2); background: var(--surface-2); }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--indigo), var(--teal)); opacity: 0; transition: opacity .25s;
+  }
+  .card:hover::before { opacity: 1; }
+  .card-icon {
+    width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center;
+    font-size: 24px; margin-bottom: 18px;
+    background: var(--surface-2); border: 1px solid var(--border);
+  }
+  .card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+  .card p { color: var(--slate); font-size: 14.5px; line-height: 1.65; }
+
+  /* ===== SECURITY METER ===== */
+  .meter-wrap {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 36px; box-shadow: var(--shadow); text-align: center;
+  }
+  .meter-ring { display: inline-block; position: relative; }
+  .meter-ring svg { transform: rotate(-90deg); }
+  .meter-ring .label {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .meter-ring .label .big { font-size: 42px; font-weight: 800; color: var(--green); }
+  .meter-ring .label .small { font-size: 13px; color: var(--slate); }
+  .meter-bars { display: flex; flex-direction: column; gap: 14px; max-width: 460px; margin: 30px auto 0; }
+  .meter-bar { display: flex; align-items: center; gap: 14px; }
+  .meter-bar .name { width: 180px; text-align: left; font-size: 14px; font-weight: 600; }
+  .meter-bar .track { flex: 1; height: 10px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+  .meter-bar .fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--indigo), var(--teal)); }
+  .meter-bar .pct { width: 48px; text-align: right; font-size: 13px; font-weight: 700; color: var(--teal); }
+
+  /* ===== CTA ===== */
+  .cta {
+    margin: 70px 24px; max-width: 1100px; margin-left: auto; margin-right: auto;
+    background: linear-gradient(135deg, rgba(108,124,240,0.15), rgba(45,212,191,0.10));
+    border: 1px solid var(--border-2); border-radius: 24px; padding: 56px 40px; text-align: center;
+  }
+  .cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; }
+  .cta p { color: var(--slate); font-size: 17px; margin-bottom: 30px; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--slate-2); font-size: 14px;
+  }
+  .footer a { color: var(--slate); }
+  .footer a:hover { color: var(--text); }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes dash { to { stroke-dashoffset: -20; } }
+  .reveal { opacity: 0; }
+  .reveal.in { animation: fadeUp .6s ease forwards; }
+  .flow-line { stroke-dasharray: 6 6; animation: dash 1s linear infinite; }
+
+  /* ===== FAQ ===== */
+  .faq { max-width: 820px; margin: 0 auto; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    margin-bottom: 12px; overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 22px; font-weight: 600; font-size: 15.5px; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; transition: background .2s;
+  }
+  .faq-q:hover { background: var(--surface-2); }
+  .faq-q .chev { transition: transform .2s; color: var(--slate); }
+  .faq-item.open .faq-q .chev { transform: rotate(180deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; color: var(--slate); font-size: 14.5px; }
+  .faq-item.open .faq-a { max-height: 240px; }
+  .faq-a-inner { padding: 0 22px 18px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo"><img src="favicons/favicon.svg" alt="Setu"></div>
+    Setu
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="feature.html">Features</a>
+    <a href="How_It_Works.html" class="active">How It Works</a>
+    <a href="#security">Security</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <button class="theme-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    <a href="index.html"><button class="nav-cta">Open App →</button></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge"><span class="dot"></span> Simple. Secure. Instant.</div>
+  <h1>How Setu Works</h1>
+  <p>Setu (सेतु = "bridge") connects your devices and people in seconds. Upload files via QR, create real-time rooms for chat & whiteboard — all protected by modern encryption. Here's the full story, in plain language.</p>
+  <div class="hero-btns">
+    <a href="index.html"><button class="btn-primary">Launch Setu →</button></a>
+    <a href="#steps"><button class="btn-ghost">See the Steps</button></a>
+  </div>
+</header>
+
+<!-- TWO PAGES OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-head">
+    <span class="section-tag">The Two Pages</span>
+    <h2>Two pages, one bridge</h2>
+    <p class="section-sub">Setu has two main screens. Each has a clear job — together they cover everything from quick file sharing to live collaboration.</p>
+  </div>
+  <div class="grid">
+    <div class="card reveal">
+      <div class="card-icon">🏠</div>
+      <h3>File Transfer Hub</h3>
+      <p>The home page. Pick files or folders, optionally add a password, and generate a QR code + short link. Anyone with the code can scan and download — no login needed. Includes Quick Receive, Receive tab, and History.</p>
+      <ul style="list-style:none; margin-top:14px;">
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--indigo-2);">▸</span> Upload files / folders (up to 10GB)
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--indigo-2);">▸</span> Optional password & one-time download
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--indigo-2);">▸</span> Auto-delete after 7 minutes
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--indigo-2);">▸</span> Login optional (profile + history)
+        </li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon"></div>
+      <h3>Live Room & Chat</h3>
+      <p>The collaboration page. Login required. Create or join a room with an 8-character code, QR, or link. Inside: real-time chat (reply, edit, unsend), peer-to-peer file sharing, and a shared whiteboard.</p>
+      <ul style="list-style:none; margin-top:14px;">
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--teal);">▸</span> Create / Join room (code, QR, link)
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--teal);">▸</span> Live chat with reply & edit
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--teal);">▸</span> P2P file & folder sharing
+        </li>
+        <li style="font-size:14px; color:var(--slate); padding:6px 0 6px 22px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--teal);">▸</span> Shared whiteboard (Excalidraw)
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BIG ARCHITECTURE DIAGRAM -->
+<section class="section" id="architecture">
+  <div class="section-head">
+    <span class="section-tag">The Big Picture</span>
+    <h2>How everything connects</h2>
+    <p class="section-sub">From your browser to the server to your friend's phone — here's the full flow of how Setu moves files and messages securely.</p>
+  </div>
+  <div class="diagram-wrap reveal">
+    <svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+      <defs>
+        <linearGradient id="gIndigo" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6C7CF0"/><stop offset="100%" stop-color="#8B9CF7"/>
+        </linearGradient>
+        <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2DD4BF"/><stop offset="100%" stop-color="#34D399"/>
+        </linearGradient>
+        <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F2A93B"/><stop offset="100%" stop-color="#F472B6"/>
+        </linearGradient>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6" fill="#8B9CF7"/>
+        </marker>
+        <marker id="arrowheadTeal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6" fill="#2DD4BF"/>
+        </marker>
+      </defs>
+
+      <rect x="20" y="150" width="180" height="120" rx="16" fill="url(#gIndigo)" opacity="0.18" stroke="#6C7CF0" stroke-width="1.5"/>
+      <text x="110" y="180" text-anchor="middle" fill="#F5F5F7" font-size="15" font-weight="700">🌐 Your Browser</text>
+      <text x="110" y="205" text-anchor="middle" fill="#A0A0B8" font-size="12">File Tranfer / Setu connection </text>
+      <text x="110" y="225" text-anchor="middle" fill="#A0A0B8" font-size="11">Select file → Encrypt</text>
+      <text x="110" y="245" text-anchor="middle" fill="#A0A0B8" font-size="11">Generate QR / Code</text>
+
+      <rect x="400" y="140" width="180" height="140" rx="16" fill="url(#gTeal)" opacity="0.16" stroke="#2DD4BF" stroke-width="1.5"/>
+      <text x="490" y="172" text-anchor="middle" fill="#F5F5F7" font-size="15" font-weight="700">🖥️ Setu Server</text>
+      <text x="490" y="196" text-anchor="middle" fill="#A0A0B8" font-size="12">FastAPI + WebSocket</text>
+      <text x="490" y="216" text-anchor="middle" fill="#A0A0B8" font-size="11">• Stores metadata + key</text>
+      <text x="490" y="234" text-anchor="middle" fill="#A0A0B8" font-size="11">• Verifies password (PBKDF2)</text>
+      <text x="490" y="252" text-anchor="middle" fill="#A0A0B8" font-size="11">• Issues download ticket</text>
+      <text x="490" y="270" text-anchor="middle" fill="#A0A0B8" font-size="11">• Relays chat / room signals</text>
+
+      <rect x="780" y="150" width="180" height="120" rx="16" fill="url(#gAmber)" opacity="0.16" stroke="#F2A93B" stroke-width="1.5"/>
+      <text x="870" y="180" text-anchor="middle" fill="#F5F5F7" font-size="15" font-weight="700">🗄️ Encrypted Storage</text>
+      
+      <text x="870" y="225" text-anchor="middle" fill="#A0A0B8" font-size="11">AES-256 encrypted chunks</text>
+      <text x="870" y="245" text-anchor="middle" fill="#A0A0B8" font-size="11">Key never stored raw</text>
+
+      <rect x="400" y="340" width="180" height="60" rx="14" fill="url(#gIndigo)" opacity="0.18" stroke="#6C7CF0" stroke-width="1.5"/>
+      <text x="490" y="376" text-anchor="middle" fill="#F5F5F7" font-size="14" font-weight="700">📱 Receiver (scans QR)</text>
+
+      <line x1="200" y1="200" x2="395" y2="200" stroke="#8B9CF7" stroke-width="2" class="flow-line" marker-end="url(#arrowhead)"/>
+      <text x="297" y="190" text-anchor="middle" fill="#8B9CF7" font-size="11" font-weight="600">1. Upload (HTTPS)</text>
+
+      <line x1="580" y1="200" x2="775" y2="200" stroke="#2DD4BF" stroke-width="2" class="flow-line" marker-end="url(#arrowheadTeal)"/>
+      <text x="677" y="190" text-anchor="middle" fill="#2DD4BF" font-size="11" font-weight="600">2. Store encrypted</text>
+
+      <line x1="490" y1="280" x2="490" y2="335" stroke="#F2A93B" stroke-width="2" class="flow-line" marker-end="url(#arrowhead)"/>
+      <text x="540" y="312" fill="#F2A93B" font-size="11" font-weight="600">3. Share code/QR</text>
+
+      <path d="M 580 370 Q 780 370 870 270" fill="none" stroke="#8B9CF7" stroke-width="2" class="flow-line" marker-end="url(#arrowhead)"/>
+      <text x="760" y="360" fill="#8B9CF7" font-size="11" font-weight="600">4. Download + Decrypt</text>
+
+      <text x="490" y="50" text-anchor="middle" fill="#A0A0B8" font-size="13">Files are encrypted in your browser → stored as encrypted chunks → decrypted only on authorized download</text>
+    </svg>
+    <p class="diagram-caption">Figure 1 — End-to-end flow of a file transfer on Setu. Your file never sits on the server in plain form.</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section" id="steps">
+  <div class="section-head">
+    <span class="section-tag">Step by Step</span>
+    <h2>From file to download in 5 steps</h2>
+    <p class="section-sub">Here's exactly what happens when you share a file on the home page (File Transfer Hub).</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <div class="step-icon">📂</div>
+      <h3>Select your files</h3>
+      <p>Open <strong>File Transfer Hub</strong>, drag files/folders into the upload area or click to browse. You can also pick an entire folder — it gets zipped in your browser.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <div class="step-icon">🔑</div>
+      <h3>Add protection (optional)</h3>
+      <p>Set an optional password and tick "One-Time Download" if you want the link to self-destruct after a single fetch. No password? Anyone with the code can still download.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <div class="step-icon">📱</div>
+      <h3>Generate QR Code</h3>
+      <p>Click <strong>"Generate QR Code"</strong>. Your file is encrypted and uploaded in chunks. You get a QR code, a short code, and a shareable link.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <div class="step-icon">📤</div>
+      <h3>Share it</h3>
+      <p>Send the QR/link via WhatsApp, Email, or just show the QR. The receiver doesn't need a Setu account — they scan and land on the download page.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">5</div>
+      <div class="step-icon">📥</div>
+      <h3>Receive & auto-delete</h3>
+      <p>Receiver enters the code (or scans QR), enters the password if set, and downloads. A 7-minute countdown starts — after that, the link auto-expires. You can also expire it manually.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROOM CONNECTION DIAGRAM -->
+<section class="section" id="room-flow">
+  <div class="section-head">
+    <span class="section-tag">Live Rooms</span>
+    <h2>How Live Rooms connect people</h2>
+    <p class="section-sub">Rooms use WebSockets for instant, bidirectional communication. Here's how two (or more) people join the same room.</p>
+  </div>
+  <div class="diagram-wrap reveal">
+    <svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+      <defs>
+        <linearGradient id="rIndigo" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6C7CF0"/><stop offset="100%" stop-color="#8B9CF7"/>
+        </linearGradient>
+        <linearGradient id="rTeal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2DD4BF"/><stop offset="100%" stop-color="#34D399"/>
+        </linearGradient>
+        <marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6" fill="#2DD4BF"/>
+        </marker>
+        <marker id="ah3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6" fill="#8B9CF7"/>
+        </marker>
+      </defs>
+
+      <rect x="30" y="120" width="170" height="110" rx="16" fill="url(#rIndigo)" opacity="0.18" stroke="#6C7CF0" stroke-width="1.5"/>
+      <text x="115" y="150" text-anchor="middle" fill="#F5F5F7" font-size="14" font-weight="700">👤 User A (Creator)</text>
+      <text x="115" y="172" text-anchor="middle" fill="#A0A0B8" font-size="11">Clicks "Create Room"</text>
+      <text x="115" y="190" text-anchor="middle" fill="#A0A0B8" font-size="11">Gets code: SETU4XY8</text>
+      <text x="115" y="210" text-anchor="middle" fill="#A0A0B8" font-size="11">Shares QR / link</text>
+
+      <rect x="400" y="110" width="180" height="130" rx="16" fill="url(#rTeal)" opacity="0.16" stroke="#2DD4BF" stroke-width="1.5"/>
+      <text x="490" y="142" text-anchor="middle" fill="#F5F5F7" font-size="14" font-weight="700">🔌 WebSocket Server</text>
+      <text x="490" y="164" text-anchor="middle" fill="#A0A0B8" font-size="11">Room: SETU4XY8</text>
+      <text x="490" y="182" text-anchor="middle" fill="#A0A0B8" font-size="11">Tracks sessions & members</text>
+      <text x="490" y="200" text-anchor="middle" fill="#A0A0B8" font-size="11">Broadcasts chat / files</text>
+      <text x="490" y="218" text-anchor="middle" fill="#A0A0B8" font-size="11">Syncs whiteboard scene</text>
+
+      <rect x="780" y="120" width="170" height="110" rx="16" fill="url(#rIndigo)" opacity="0.18" stroke="#6C7CF0" stroke-width="1.5"/>
+      <text x="865" y="150" text-anchor="middle" fill="#F5F5F7" font-size="14" font-weight="700">👤 User B (Joiner)</text>
+      <text x="865" y="172" text-anchor="middle" fill="#A0A0B8" font-size="11">Enters code / scans QR</text>
+      <text x="865" y="190" text-anchor="middle" fill="#A0A0B8" font-size="11">Auth token verified</text>
+      <text x="865" y="210" text-anchor="middle" fill="#A0A0B8" font-size="11">Joins room instantly</text>
+
+      <line x1="200" y1="170" x2="395" y2="170" stroke="#2DD4BF" stroke-width="2" class="flow-line" marker-end="url(#ah2)"/>
+      <text x="297" y="160" text-anchor="middle" fill="#2DD4BF" font-size="11" font-weight="600">WSS (secure)</text>
+
+      <line x1="780" y1="170" x2="585" y2="170" stroke="#8B9CF7" stroke-width="2" class="flow-line" marker-end="url(#ah3)"/>
+      <text x="683" y="160" text-anchor="middle" fill="#8B9CF7" font-size="11" font-weight="600">WSS (secure)</text>
+
+      <text x="490" y="300" text-anchor="middle" fill="#A0A0B8" font-size="13">Both users connect to the same room over an encrypted WebSocket (wss://). The server relays messages — it does not read them.</text>
+    </svg>
+    <p class="diagram-caption">Figure 2 — Room connection. Every member opens a secure WebSocket to the server, which routes chat, files, and whiteboard updates to the right room.</p>
+  </div>
+</section>
+
+<!-- INDEX VS SETU DEEP DIVE -->
+<section class="section" id="deepdive">
+  <div class="section-head">
+    <span class="section-tag">In Detail</span>
+    <h2>What each page actually does</h2>
+    <p class="section-sub">A closer look at the mechanics behind the two pages.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>🏠 File Transfer Hub</h3>
+      <p>The home page is built for one thing: move a file from you to someone else, fast, with as little friction as possible.</p>
+      <ul>
+        <li><strong>Select</strong> files or a folder (auto-zipped in-browser with JSZip)</li>
+        <li><strong>Optional password</strong> — hashed with PBKDF2-SHA256 (100,000 iterations)</li>
+        <li><strong>One-time download</strong> flag — link dies after first fetch</li>
+        <li><strong>Generate QR</strong> — file is AES-256 encrypted, split into chunks, uploaded</li>
+        <li><strong>Share</strong> via WhatsApp, Email, QR PNG, print, or copy link</li>
+        <li><strong>Receive</strong> tab — enter code, see file list + 7-min countdown</li>
+        <li><strong>History</strong> tab — past transfers with codes & protection badges</li>
+        <li><strong>Quick Receive</strong> box — one-line code entry on the home page</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="border:2px dashed var(--border-2); border-radius:12px; padding:22px; text-align:center; color:var(--slate);">
+          <div style="font-size:32px; margin-bottom:6px;">⬆</div>
+          <p style="font-size:13px;">Drop files here or click</p>
+          <p style="font-size:11px; color:var(--slate-2); margin-top:4px;">Max: 10GB per Upload</p>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(108,124,240,0.15); color:var(--indigo-2); font-weight:600;">🔒 Password</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(242,169,59,0.15); color:var(--amber); font-weight:600;">⏱ 7 min</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(52,211,153,0.15); color:var(--green); font-weight:600;">⬇ One-time</span>
+        </div>
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center;">
+          <div style="font-size:24px; margin-bottom:6px;">📱</div>
+          <div style="font-family:monospace; font-size:16px; font-weight:700; letter-spacing:3px; color:var(--indigo-2);">AB3X9K</div>
+          <div style="font-size:11px; color:var(--slate); margin-top:4px;">QR + Link generated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>🚪 Live Room & Chat</h3>
+      <p>The room page is a live workspace. Login is required so the server knows who's who — every action is tied to your authenticated session.</p>
+      <ul>
+        <li><strong>Auth gate</strong> — redirects to login if not authenticated</li>
+        <li><strong>Create Room</strong> — server generates an 8-char code + link</li>
+        <li><strong>Join Room</strong> — enter code, or scan QR, or open link</li>
+        <li><strong>WebSocket</strong> — persistent secure connection for live updates</li>
+        <li><strong>Chat</strong> — reply, edit, unsend, context menu, highlighting</li>
+        <li><strong>File sharing</strong> — P2P-style send to everyone or specific members</li>
+        <li><strong>Whiteboard</strong> — shared Excalidraw canvas, synced in real time</li>
+        <li><strong>Auto-reconnect</strong> — room state saved locally, rejoins on refresh</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--bg-3); border-radius:12px; border:1px solid var(--border);">
+          <span style="width:10px; height:10px; border-radius:50%; background:var(--green); box-shadow:0 0 10px var(--green);"></span>
+          <div>
+            <div style="font-size:13px; font-weight:600;">Room: SETU4XY8</div>
+            <div style="font-size:11px; color:var(--slate);">WebSocket live • 3 members</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <div style="background:var(--bg-3); padding:8px 12px; border-radius:14px; font-size:12px; max-width:70%;">Hey team! 🎨</div>
+        </div>
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+          <div style="background:linear-gradient(135deg,var(--indigo),var(--indigo-2)); color:#fff; padding:8px 12px; border-radius:14px; font-size:12px; max-width:70%;">Starting now! ✏️</div>
+        </div>
+        <div style="display:flex; gap:8px; justify-content:center; margin-top:4px;">
+          <span style="font-size:11px; padding:5px 10px; border-radius:8px; background:rgba(108,124,240,0.15); color:var(--indigo-2);">💬 Chat</span>
+          <span style="font-size:11px; padding:5px 10px; border-radius:8px; background:rgba(45,212,191,0.15); color:var(--teal);">📁 Files</span>
+          <span style="font-size:11px; padding:5px 10px; border-radius:8px; background:rgba(244,114,182,0.15); color:var(--rose);">🎨 Board</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="section" id="security">
+  <div class="section-head">
+    <span class="section-tag">Security</span>
+    <h2>Why your data is safe</h2>
+    <p class="section-sub">Setu is built with security at every layer — encryption, authentication, and auto-expiry. Here's exactly what protects you.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card reveal">
+      <div class="card-icon">🔐</div>
+      <h3>AES-256 File Encryption</h3>
+      <p>Every file is encrypted with a fresh 256-bit AES key (CFB mode) before it ever leaves your device. The key is wrapped with AES-GCM using a server secret — the raw key is never stored.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔑</div>
+      <h3>Password Hashing (PBKDF2)</h3>
+      <p>Optional passwords are hashed with <strong>PBKDF2-HMAC-SHA256</strong> over 100,000 iterations with a random salt. Verification uses constant-time comparison to prevent timing attacks.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🎫</div>
+      <h3>Secure Download Tickets</h3>
+      <p>Password-protected downloads require a verified ticket. The password is checked server-side, and only then is the wrapped key released for decryption.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🪙</div>
+      <h3>JWT Authentication</h3>
+      <p>Room access (setu.html) requires login. Appwrite issues a JWT that's verified on every API call and WebSocket connection — no anonymous room access.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔌</div>
+      <h3>Encrypted WebSocket (WSS)</h3>
+      <p>All real-time chat, file, and whiteboard traffic flows over <strong>wss://</strong> — TLS-encrypted in transit. The server relays signals; it doesn't read your messages.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⏱️</div>
+      <h3>Auto-Expiry</h3>
+      <p>QR transfers auto-delete after <strong>7 minutes</strong>. One-time downloads expire after a single fetch. You can also manually expire a link — only the uploader holds the delete token.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🆔</div>
+      <h3>Session Tracking</h3>
+      <p>Each connection gets a unique session ID. The server tracks active sessions per room, so member lists stay accurate and leaving a room cleanly clears your session.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧩</div>
+      <h3>Chunked Storage</h3>
+      <p>Large files are split into encrypted chunks (max ~1.9GB each) before storage. No single piece is usable on its own — and the key lives separately from the chunks.</p>
+    </div>
+  </div>
+
+  <div class="meter-wrap reveal" style="margin-top:40px;">
+    <h3 style="font-size:22px; font-weight:800; margin-bottom:8px;">Security Scorecard</h3>
+    <p style="color:var(--slate); font-size:15px; margin-bottom:24px;">A quick summary of how each layer is protected.</p>
+    <div class="meter-ring">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <defs>
+          <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2DD4BF"/><stop offset="100%" stop-color="#34D399"/>
+          </linearGradient>
+        </defs>
+        <circle cx="90" cy="90" r="78" fill="none" stroke="var(--surface-2)" stroke-width="14"/>
+        <circle cx="90" cy="90" r="78" fill="none" stroke="url(#ringGrad)" stroke-width="14"
+                stroke-linecap="round" stroke-dasharray="490" stroke-dashoffset="25"/>
+      </svg>
+      <div class="label">
+        <div class="big">95%</div>
+        <div class="small">Protected</div>
+      </div>
+    </div>
+    <div class="meter-bars">
+      <div class="meter-bar"><div class="name">File Encryption</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="pct">100%</div></div>
+      <div class="meter-bar"><div class="name">Password Hashing</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="pct">100%</div></div>
+      <div class="meter-bar"><div class="name">Transit (WSS/HTTPS)</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="pct">100%</div></div>
+      <div class="meter-bar"><div class="name">Auth (JWT)</div><div class="track"><div class="fill" style="width:95%"></div></div><div class="pct">95%</div></div>
+      <div class="meter-bar"><div class="name">Auto-Expiry</div><div class="track"><div class="fill" style="width:90%"></div></div><div class="pct">99.9%</div></div>
+      <div class="meter-bar"><div class="name">User Data Privacy</div><div class="track"><div class="fill" style="width:90%"></div></div><div class="pct">100%</div></div>
+    </div>
+    <p style="color:var(--slate-2); font-size:12px; margin-top:20px;">* Scores reflect implemented protections. No system is 100% — always use strong passwords and share links only with trusted recipients.</p>
+  </div>
+</section>
+
+<!-- USER DATA PRIVACY -->
+<section class="section" id="privacy">
+  <div class="section-head">
+    <span class="section-tag">Your Data</span>
+    <h2>What we keep, and what we don't</h2>
+    <p class="section-sub">Plain answers about where your files and profile information live.</p>
+  </div>
+  <div class="grid">
+    <div class="card reveal">
+      <div class="card-icon">📁</div>
+      <h3>Your Files</h3>
+      <p>Files are <strong>encrypted before upload</strong> and stored as encrypted chunks. The decryption key is wrapped and stored separately. Even if storage were compromised, the chunks are useless without the wrapped key and the server secret.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👤</div>
+      <h3>Your Profile</h3>
+      <p>If you log in, your name, nickname, email, phone, and country are stored in the Setu database to power your profile card and room membership. This data is tied to your authenticated account — not shared publicly.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">💬</div>
+      <h3>Your Messages</h3>
+      <p>Chat messages in rooms are relayed over WebSocket to connected members in the room. They are <strong>not permanently stored</strong> — when you leave or the room closes, the live session ends.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🗑️</div>
+      <h3>Auto-Deletion</h3>
+      <p>QR file transfers auto-expire after 7 minutes. One-time downloads vanish after a single fetch. You can manually expire links anytime. History entries can be deleted from your History tab.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-head">
+    <span class="section-tag">FAQ</span>
+    <h2>Quick questions, clear answers</h2>
+  </div>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Do I need to log in to share a file? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">No. The home page (File Transfer Hub) lets you upload and generate a QR without any account. Login is optional and only adds profile + history features.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to log in to join a room? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Live Room & Chat requires authentication so the server can verify who you are and track room membership securely.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can the server read my files? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">No. Files are encrypted in your browser with AES-256 before upload. The server stores encrypted chunks and a wrapped key — it never has the raw key to decrypt your file.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens after 7 minutes? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">The download link auto-expires. The receiver can no longer download using that code. The uploader can generate a new transfer anytime.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my password stored anywhere? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Never in plain text. Passwords are hashed with PBKDF2-SHA256 (100,000 iterations) and a random salt. Only the hash and salt are stored — verification uses constant-time comparison.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are chat messages saved? <span class="chev">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">No. Room chat is relayed live over WebSocket to connected members. Messages are not permanently stored on the server — when the session ends, they're gone.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to bridge the gap?</h2>
+  <p>Share a file in seconds, or open a room and start collaborating. No installs, no friction.</p>
+  <div class="hero-btns">
+    
+    <a href="index.html"><button class="btn-ghost">Setu Bridge →</button></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:48px;padding:60px 24px 32px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div class="nav-logo" style="width:38px;height:38px;border-radius:10px;overflow:hidden;border:1px solid var(--border);"><img src="favicons/favicon.svg" alt="Setu Logo" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span style="font-size:18px;font-weight:800;">Setu</span>
+      </div>
+      <p style="color:var(--slate);font-size:13.5px;line-height:1.7;max-width:260px;">Real-time collaboration platform — bridge the gap. Share files, chat, and collaborate instantly, from any browser.</p>
+      <div style="display:flex;gap:10px;margin-top:18px;">
+        <a href="https://github.com/Infinity0-0/Setu_Bridge.git" target="_blank" rel="noopener" title="GitHub" style="width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;color:var(--slate);transition:background .2s,color .2s,transform .2s;text-decoration:none;" onmouseover="this.style.background='var(--surface-2)';this.style.color='var(--text)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--surface)';this.style.color='var(--slate)';this.style.transform='translateY(0)'">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Platform</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="index.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Home</a></li>
+        <li style="margin-bottom:10px;"><a href="setu.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Open App</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html" style="color:var(--text);font-size:14px;text-decoration:none;">How It Works</a></li>
+        <li style="margin-bottom:10px;"><a href="feature.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Features</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Support</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+        <li style="margin-bottom:10px;"><a href="setu_contact.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#security" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Security</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#privacy" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Data Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Legal</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="privacy_policy.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Privacy Policy</a></li>
+        <li style="margin-bottom:10px;"><a href="terms.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Terms & Conditions</a></li>
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:24px 24px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <p style="color:var(--slate-2);font-size:13px;">© 2025 Setu-Bridge. Built with ❤️ in India.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="privacy_policy.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Terms & Conditions</a>
+      <a href="faq.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">FAQ</a>
+      <a href="setu_contact.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('themeBtn');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('setu-theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  themeBtn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('setu-theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

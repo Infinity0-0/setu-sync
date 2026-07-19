@@ -1,0 +1,115 @@
+﻿# Environments & Secrets - NEVER commit these
+.env
+.env.*
+.env.template
+.env.local
+.env.production
+.env.staging
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secret / credential files
+secrets.py
+secrets.json
+credentials.json
+service_account.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Database files (local/SQLite - may contain sensitive data)
+*.db
+*.sqlite
+*.sqlite3
+local_shares.db
+
+# Session files (Telethon/Pyrogram sessions contain auth tokens)
+*.session
+*.session-journal
+
+# Temporary uploads and runtime data
+temp_uploads/
+temp/
+*.tmp
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Cython
+cython_debug/

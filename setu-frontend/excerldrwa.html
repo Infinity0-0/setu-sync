@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>Setu Draw · Live Collab</title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#4F3CC9">
+
+<meta property="og:type" content="website">
+<!-- X / Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://setusync.space/excerldrwa.html">
+<meta name="twitter:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+<meta name="twitter:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+<meta name="twitter:image" content="https://setusync.space/favicons/logo1.webp">
+
+ <!-- Meta tag -->
+    <title>Setu: Whiteboard for Real-time Collaboration to collaborate</title>
+    <meta name="description" content="Welcome to Setu. Sign in or register the free account for the safe transfer of files, instant collaboration and universal connectivity.">
+    <meta name="keywords" content="Setu, setu login/signup, file sharing, setusync,">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/excerldrwa.html">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu: Whiteboard for Real-time Collaboration">
+    <meta property="og:description" content="Explore Setu's secure file sharing, QR transfers, live chat, collaborative whiteboards, and real-time teamwork.">
+    <meta property="og:url" content="https://setusync.space/excerldrwa.html">
+    <meta property="og:site_name" content="सेतु-Connect with the world">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%; height: 100%;
+    position: fixed;             /* prevents iOS rubber-band scroll */
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: none;
+    background: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #excalidraw-root {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    touch-action: none;
+  }
+
+  /* ── Status badge ─────────────────────────────────────────────────────── */
+   #status-badge {
+     position: fixed;
+     top: max(6px, env(safe-area-inset-top));
+     right: max(12px, env(safe-area-inset-right));
+     left: auto;
+     padding: 6px 16px;
+     border-radius: 999px;
+     font-size: 12px;
+     font-weight: 600;
+     color: #fff;
+     z-index: 9999;
+     pointer-events: none;
+     white-space: nowrap;
+     transition: opacity .3s, background .3s;
+     background: #6366f1;
+   }
+  #status-badge.live        { background: #10b981; }
+  #status-badge.error       { background: #f59e0b; }
+  #status-badge.expired     { background: #ef4444; }
+  #status-badge.hidden      { opacity: 0; }
+
+  /* ── Room badge ───────────────────────────────────────────────────────── */
+   #room-badge {
+     position: fixed;
+     top: max(44px, calc(env(safe-area-inset-top) + 32px));
+     left: max(12px, env(safe-area-inset-left));
+     background: rgba(255,255,255,0.92);
+     backdrop-filter: blur(8px);
+     padding: 5px 11px;
+     border-radius: 10px;
+     box-shadow: 0 2px 10px rgba(0,0,0,.12);
+     font-size: 11px;
+     color: #6b7280;
+     z-index: 9998;
+     pointer-events: none;
+     line-height: 1.5;
+   }
+  #room-badge strong { font-size: 13px; color: #111827; }
+
+  /* ── Excalidraw overrides for mobile ─────────────────────────────────── */
+  .excalidraw .layer-ui__wrapper__footer-center {
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  }
+  .excalidraw .Island { max-width: calc(100vw - 20px) !important; }
+   @media (max-width: 768px) {
+     .excalidraw button { min-width: 36px !important; min-height: 36px !important; }
+     .excalidraw .layer-ui__wrapper__footer-right {
+       right: max(4px, env(safe-area-inset-right)) !important;
+     }
+     .excalidraw .popover-content { max-height: 50vh; overflow-y: auto; }
+     .excalidraw .App-menu_top { left: max(8px, env(safe-area-inset-left)) !important; }
+     .excalidraw .App-toolbar { max-width: calc(100vw - 20px); overflow-x: auto; }
+     .excalidraw .Island { max-width: calc(100vw - 16px) !important; }
+     .excalidraw .dropdown-menu { max-width: calc(100vw - 24px) !important; max-height: 60vh !important; overflow-y: auto !important; }
+     .excalidraw .layer-ui__wrapper__footer { padding: 0 8px 0 48px !important; }
+     #status-badge { font-size: 10px; padding: 5px 12px; }
+     #room-badge { font-size: 10px; padding: 4px 9px; }
+   }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .excalidraw .layer-ui__wrapper__footer-center {
+      transform: scale(1.05);
+      transform-origin: bottom center;
+    }
+  }
+  .excalidraw .collaborator-cursor-user {
+    font-size: 11px !important; white-space: nowrap !important;
+    max-width: 120px !important; overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  /* HIDE Excalidraw's built-in collab button */
+  .excalidraw .collab-button,
+  .excalidraw [class*="CollabButton"],
+  .excalidraw .layer-ui__wrapper__top-right .zen-mode-transition:has(.collab-button),
+  .excalidraw button[aria-label*="collab" i],
+  .excalidraw button[aria-label*="collaboration" i],
+  .excalidraw button[aria-label*="live" i],
+  .excalidraw .layer-ui__wrapper__top-right > .zen-mode-transition {
+    display: none !important;
+  }
+</style>
+
+<!-- Excalidraw CSS (must load before the JS) -->
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@excalidraw/excalidraw@0.17.6/dist/dev/index.css"
+  crossorigin="anonymous" />
+
+<!-- React 18 UMD (production) -->
+<script crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+
+<!-- Excalidraw UMD — depends on React being already on window -->
+<script crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/@excalidraw/excalidraw@0.17.6/dist/excalidraw.production.min.js"></script>
+</head>
+<body>
+
+<div id="room-badge">
+  <div>ROOM</div>
+  <strong id="room-display">—</strong>
+</div>
+<div id="status-badge">⟳ Connecting…</div>
+<div id="excalidraw-root"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Bail if room param missing ───────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const room   = params.get('room');
+  if (!room) {
+    document.body.innerHTML =
+      '<div style="display:flex;align-items:center;justify-content:center;height:100vh;color:#dc2626;font-size:18px;text-align:center;padding:24px;">' +
+      '❌ Room not found.<br>Please open from the Setu dashboard.</div>';
+    return;
+  }
+  document.getElementById('room-display').textContent = room.slice(-12);
+
+  // ── Constants ────────────────────────────────────────────────────────────
+  const MAX_MSG_BYTES  = 512 * 1024;   // 512 KB guard
+  const THROTTLE_ELEM  = 100;          // ms — element broadcast throttle
+  const THROTTLE_PTR   = 33;           // ms — pointer broadcast throttle
+
+  const COLLAB_COLORS  = [
+    '#f87171','#fb923c','#fbbf24','#34d399',
+    '#38bdf8','#818cf8','#e879f9','#f472b6',
+  ];
+
+  function colorForId(id) {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+    return COLLAB_COLORS[h % COLLAB_COLORS.length];
+  }
+
+  function throttle(fn, ms) {
+    let last = 0;
+    return function (...args) {
+      const now = Date.now();
+      if (now - last >= ms) { last = now; fn.apply(this, args); }
+    };
+  }
+
+  // ── Stable user identity ─────────────────────────────────────────────────
+  const qName   = params.get('name') || 'Whiteboard User';
+  const userId  = 'wb_' + Math.random().toString(36).slice(2, 10);
+  const userName = qName.slice(0, 64);
+
+  // ── Status badge helper ──────────────────────────────────────────────────
+  const badge  = document.getElementById('status-badge');
+  let hideTimer = null;
+  function setStatus(text, cls, autoHide) {
+    badge.textContent = text;
+    badge.className   = cls || '';
+    if (hideTimer) clearTimeout(hideTimer);
+    if (autoHide) hideTimer = setTimeout(() => badge.classList.add('hidden'), 2500);
+  }
+
+  // ── Excalidraw API reference ─────────────────────────────────────────────
+  let excalidrawAPI  = null;
+  const collaboratorsMap = new Map();
+
+  // ── WebSocket state ──────────────────────────────────────────────────────
+  let ws            = null;
+  let isConnected   = false;
+  let reconnectDelay = 2000;
+  let reconnectTimer = null;
+
+  const wsProto = location.protocol === 'https:' ? 'wss' : 'ws';
+  const wsUrl   = `${wsProto}//${location.host}/api/excalidraw/sync/${encodeURIComponent(room)}` +
+                  `?sessionId=${encodeURIComponent(userId)}&name=${encodeURIComponent(userName)}`;
+
+  // ── Apply remote update ──────────────────────────────────────────────────
+  function applyRemote(payload, senderId) {
+    if (!payload || !excalidrawAPI) return;
+
+    if (payload.action === 'elements' && Array.isArray(payload.elements)) {
+      const current   = excalidrawAPI.getSceneElements();
+      const remoteMap = new Map(payload.elements.map(el => [el.id, el]));
+      const merged    = current
+        .map(el => remoteMap.has(el.id) ? remoteMap.get(el.id) : el)
+        .concat(payload.elements.filter(el => !current.find(c => c.id === el.id)));
+      excalidrawAPI.updateScene({ elements: merged });
+    } else if (payload.action === 'pointer' && payload.pointer) {
+      const col = colorForId(senderId);
+      collaboratorsMap.set(senderId, {
+        pointer:  { x: payload.pointer.x, y: payload.pointer.y },
+        username: payload.name || senderId.slice(0, 8),
+        color:    { background: col, stroke: '#fff' },
+        id:       senderId,
+      });
+      excalidrawAPI.updateScene({ collaborators: collaboratorsMap });
+    } else if (payload.action === 'clear') {
+      excalidrawAPI.resetScene();
+    }
+  }
+
+  // ── Safe send ────────────────────────────────────────────────────────────
+  function safeSend(obj) {
+    if (!ws || !isConnected || ws.readyState !== WebSocket.OPEN) return;
+    try {
+      const str = JSON.stringify(obj);
+      if (str.length > MAX_MSG_BYTES) return;
+      ws.send(str);
+    } catch { /* ignore */ }
+  }
+
+  // ── Connect ──────────────────────────────────────────────────────────────
+  function connect() {
+    setStatus('⟳ Connecting…', '');
+    ws = new WebSocket(wsUrl);
+
+    ws.onopen = () => {
+      isConnected    = true;
+      reconnectDelay = 2000;
+      setStatus('● Live Sync', 'live', true);
+    };
+
+    ws.onmessage = async (event) => {
+      try {
+        const raw = event.data instanceof Blob ? await event.data.text() : event.data;
+        if (raw.length > MAX_MSG_BYTES * 4) return;
+        const msg = JSON.parse(raw);
+        if (msg.type === 'whiteboard_draw') {
+          applyRemote(msg.payload, msg.sender);
+        } else if (msg.type === 'scene_request' && excalidrawAPI) {
+          // A new user joined — send them the current scene
+          const elements = excalidrawAPI.getSceneElements();
+          safeSend({
+            type: 'scene_snapshot',
+            sender: userId,
+            target: msg.sender,
+            payload: { action: 'elements', elements },
+          });
+        } else if (msg.type === 'scene_snapshot') {
+          // Receiving initial scene state from an existing client
+          applyRemote(msg.payload, msg.sender);
+        }
+      } catch { /* bad JSON — ignore */ }
+    };
+
+    ws.onclose = (ev) => {
+      isConnected = false;
+      if (ev.code === 4004) {
+        setStatus('Room Expired', 'expired');
+        return;
+      }
+      setStatus(`⚠ Disconnected. Retrying…`, 'error');
+      reconnectTimer = setTimeout(() => {
+        reconnectDelay = Math.min(reconnectDelay * 1.5, 30000);
+        connect();
+      }, reconnectDelay);
+    };
+
+    ws.onerror = () => { /* onclose fires right after */ };
+  }
+
+  // ── Throttled broadcast callbacks ─────────────────────────────────────────
+  const lastBroadcastedVersions = new Map();
+  const broadcastElements = throttle(function (elements) {
+    const changed = elements.filter(el => {
+      if (lastBroadcastedVersions.get(el.id) === el.version) return false;
+      lastBroadcastedVersions.set(el.id, el.version);
+      return true;
+    });
+    if (changed.length === 0) return;
+    safeSend({ type: 'whiteboard_draw', sender: userId,
+               payload: { action: 'elements', elements: changed } });
+  }, THROTTLE_ELEM);
+
+  const broadcastPointer = throttle(function (pointer) {
+    safeSend({ type: 'whiteboard_draw', sender: userId,
+               payload: { action: 'pointer', pointer, name: userName } });
+  }, THROTTLE_PTR);
+
+  // ── Mount Excalidraw ──────────────────────────────────────────────────────
+  const { createElement: h } = React;
+  const { createRoot }       = ReactDOM;
+  const { Excalidraw }       = ExcalidrawLib;
+
+  function WhiteboardApp() {
+    const [, forceUpdate] = React.useState(0);
+
+    const handleAPI = React.useCallback((api) => {
+      excalidrawAPI = api;
+      forceUpdate(n => n + 1);
+    }, []);
+
+    const onChange = React.useCallback((elements) => {
+      broadcastElements(elements);
+    }, []);
+
+    const onPointerUpdate = React.useCallback((payload) => {
+      if (payload?.pointer) broadcastPointer(payload.pointer);
+    }, []);
+
+    return h(Excalidraw, {
+      excalidrawAPI:   handleAPI,
+      onChange:        onChange,
+      onPointerUpdate: onPointerUpdate,
+      isCollaborating: isConnected,
+      initialData:     { appState: { viewBackgroundColor: '#ffffff' } },
+      UIOptions: {
+        canvasActions: {
+          changeViewBackgroundColor: true,
+          clearCanvas:               true,
+          loadScene:                 false,
+          saveToActiveFile:          false,
+          saveAsImage:               true,
+          export:                    true,
+          toggleTheme:               true,
+        },
+      },
+    });
+  }
+
+  const rootEl   = document.getElementById('excalidraw-root');
+  const reactRoot = createRoot(rootEl);
+  reactRoot.render(h(WhiteboardApp));
+
+  // ── Start connection ──────────────────────────────────────────────────────
+  connect();
+
+  // ── Cleanup on unload ─────────────────────────────────────────────────────
+  window.addEventListener('beforeunload', () => {
+    clearTimeout(reconnectTimer);
+    if (ws) { ws.onclose = null; ws.close(); }
+  });
+})();
+</script>
+</body>
+</html>

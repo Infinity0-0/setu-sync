@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सेतु-setuConnect</title>
+    <meta name="description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://setusync.space/">
+    <meta property="og:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+    <meta property="og:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+ 
+<!-- X / Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://setusync.space/">
+<meta name="twitter:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+<meta name="twitter:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+<meta name="twitter:image" content="https://setusync.space/favicons/logo1.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+     <!-- Meta tag -->
+    <title>Setu:World's Secure File Sharing & Collaboration Platform</title>
+    <meta name="description" content="Make faster file movements with Setu. Send via QR codes, work together in real-time, secure all transfers, and work securely from any device.">
+    <meta name="keywords" content="Setu, file sharing, setusync,">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu: Secure File Sharing & Collaboration Platform">
+    <meta property="og:description" content="Explore Setu's secure file sharing, QR transfers, live chat, collaborative whiteboards, and real-time teamwork.">
+    <meta property="og:url" content="https://setusync.space/">
+    <meta property="og:site_name" content="Setu">
+
+
+    <link rel="stylesheet" href="stylus.css">
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+    <style>
+        /* ─── Profile Card Slide Animation ─── */
+        .profile-card-slide {
+            animation: slideInCard 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes slideInCard {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .profile-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            animation: rowSlide 0.3s ease forwards;
+            opacity: 0;
+        }
+        .profile-detail-item:nth-child(1) { animation-delay: 0.1s; }
+        .profile-detail-item:nth-child(2) { animation-delay: 0.15s; }
+        .profile-detail-item:nth-child(3) { animation-delay: 0.2s; }
+        .profile-detail-item:nth-child(4) { animation-delay: 0.25s; }
+        .profile-detail-item:nth-child(5) { animation-delay: 0.3s; }
+        @keyframes rowSlide {
+            0% { opacity: 0; transform: translateX(-10px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* ─── Navbar user button hover glow ─── */
+        .user-btn-glow {
+            transition: all 0.3s ease;
+        }
+        .user-btn-glow:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            border-color: #3b82f6 !important;
+        }
+
+   .navbar{
+    height: 70px;   /* Navbar ki fixed height */
+    padding: 0;
+}
+
+.navbar-brand{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 100px;      /* Logo jitna bada chahiye */
+    height: 100px;
+    object-fit: contain;
+}
+.logospan{
+    font-size: 1.5rem;
+    color: #ec4f98;
+    margin-left: 10px;
+}
+
+/* ─── Mobile Responsive Navbar ─── */
+@media (max-width: 991.98px) {
+    .desktop-auth-btn {
+        display: none !important;
+    }
+    .navbar {
+        height: auto;
+        min-height: 60px;
+        padding: 8px 0;
+    }
+    .navbar-brand {
+        height: auto;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    .logospan {
+        font-size: 1.2rem;
+        margin-left: 6px;
+    }
+    .navbar-toggler {
+        border: none;
+        padding: 4px 8px;
+    }
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .navbar-collapse {
+        background: linear-gradient(135deg, #D8F5EE 0%, #8FC7FF 35%, #4D6CFF 70%, #2A1F8E 100%);
+        border-radius: 0 0 16px 16px;
+        padding: 12px 16px;
+        margin-top: 8px;
+        box-shadow: 0 8px 24px rgba(42,31,142,0.15);
+    }
+    .navbar-nav {
+        gap: 4px;
+    }
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+    .nav-loc {
+        display: block;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.1);
+        margin-bottom: 2px;
+    }
+    .nav-loc:hover, .nav-loc.active {
+        background: rgba(255,255,255,0.2);
+    }
+    /* Auth buttons in mobile menu */
+    #authBtnConnect,
+    #authBtnProfile {
+        margin-left: 0 !important;
+        margin-top: 6px;
+    }
+    #authBtnConnect .btn,
+    #authBtnProfile .btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+    #authBtnProfile .dropdown {
+        width: 100%;
+    }
+    #authBtnProfile .dropdown-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #authBtnProfile .dropdown-menu {
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+
+/* ─── Small mobile (max-width: 576px) ─── */
+@media (max-width: 576px) {
+    .main-container {
+        padding: 0.8rem 0.6rem;
+    }
+    .card-body {
+        padding: 0.9rem !important;
+    }
+    .card.p-3, .card.p-4 {
+        padding: 0.5rem !important;
+    }
+    .card.p-9 {
+        margin-top: 0.8rem;
+    }
+    .upload-area {
+        padding: 1rem 0.8rem;
+    }
+    .upload-area i.display-4 {
+        font-size: 2.5rem;
+    }
+    .security-badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    .btn-sync {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+    .btn-connect {
+        padding: 6px 14px;
+        font-size: 0.78rem;
+    }
+    .nav-tabs .nav-link {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+    }
+    .selected-files-scroll {
+        max-height: 180px;
+    }
+    .connection-option {
+        padding: 0.5rem;
+    }
+    .connection-option i {
+        font-size: 1.2rem !important;
+    }
+    .connection-option h6 {
+        font-size: 0.75rem;
+    }
+    .footer .text-end {
+        text-align: center !important;
+        margin-top: 4px;
+    }
+    
+}
+
+    </style>
+    <!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Setu-Connect",
+  "url": "https://setusync.space",
+  "description": "Setu is a platform that lets you collaborate in real-time with secure messaging, peer-to-peer file sharing, a shared whiteboard, and instant room creation directly in your browser.",
+  "applicationCategory": "CommunicationApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "featureList": [
+    "Fast and secure file sharing",
+    "File sharing made in India",
+    "Peer-to-peer file transfer",
+    "Real-time chat",
+    "Collaborative whiteboard",
+    "End-to-end encryption",
+    "Instant Room Codes"
+  ]
+}
+</script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+    <img src="favicons/logo1.webp" alt="Setu Logo" class="logo me-2">
+    <span class="logospan fw-bold">SETU</span>
+</a>
+
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <!-- Auth Buttons (mobile navbar bar only) -->
+                <div id="authBtnConnectMobile" style="display:none;">
+                    <a class="btn btn-primary btn-sm rounded-pill px-3 mobile-auth-btn" href="auth.html" style="background:linear-gradient(135deg,#3b82f6,#6366f1);border:none;">
+                        <i class="fas fa-plug me-1"></i>Connect
+                    </a>
+                </div>
+                <div id="authBtnProfileMobile" class="position-relative" style="display:none;">
+                    <div class="dropdown">
+                        <button class="btn btn-dark btn-sm rounded-pill px-3 dropdown-toggle user-btn-glow" data-bs-toggle="dropdown" style="border:1px solid rgba(255,255,255,0.1);">
+                            <i class="fas fa-user-circle me-1"></i> <span id="navUserNameMobile"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" style="background:#1e293b;border:1px solid rgba(255,255,255,0.1);">
+                            <li><a class="dropdown-item text-light profile-nav-link" href="#" id="navProfileLinkMobile"><i class="fas fa-id-card me-2"></i>My Setu Profile</a></li>
+                            <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.1);"></li>
+                            <li><a class="dropdown-item text-light" href="setu.html"><i class="fas fa-door-open me-2"></i>Room</a></li>
+                            <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.1);"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="navLogoutBtnMobile"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-loc active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-loc" href="feature.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-loc" href="How_It_Works.html">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-loc" href="setu_contact.html">Contact</a></li>
+                    <!-- Desktop auth buttons (after Contact) -->
+                    <li class="nav-item ms-2 desktop-auth-btn" id="authBtnConnect" style="display:none;">
+                        <a class="btn btn-primary btn-sm rounded-pill px-3" href="auth.html" style="background:linear-gradient(135deg,#3b82f6,#6366f1);border:none;">
+                            <i class="fas fa-plug me-1"></i>Connect
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2 position-relative desktop-auth-btn" id="authBtnProfile" style="display:none;">
+                        <div class="dropdown">
+                            <button class="btn btn-dark btn-sm rounded-pill px-3 dropdown-toggle user-btn-glow" data-bs-toggle="dropdown" style="border:1px solid rgba(255,255,255,0.1);">
+                                <i class="fas fa-user-circle me-1"></i> <span id="navUserName"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" style="background:#1e293b;border:1px solid rgba(255,255,255,0.1);">
+                                <li><a class="dropdown-item text-light profile-nav-link" href="#" id="navProfileLink"><i class="fas fa-id-card me-2"></i>My Setu Profile</a></li>
+                                <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.1);"></li>
+                                <li><a class="dropdown-item text-light" href="setu.html"><i class="fas fa-door-open me-2"></i>Room</a></li>
+                                <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.1);"></li>
+                                <li><a class="dropdown-item text-danger" href="#" id="navLogoutBtn"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="row main-row">
+            <!-- LEFT COLUMN (desktop): Select Files + Connection/Profile -->
+            <div class="col-lg-5 mb-4 desktop-left-col">
+                <!-- Mobile order: 1st -->
+                <div class="card p-3 mobile-order-1">
+                    <div class="card-body">
+                        <h5 class="text-center mb-2"><i class="fas fa-folder-open me-2"></i> Select Files</h5>
+                        <div class="btn-group w-100 mb-2" role="group">
+                            <button type="button" class="btn btn-connect active" id="fileModeBtn"><i class="fas fa-file me-1"></i> Files</button>
+                            <button type="button" class="btn btn-connect" id="folderModeBtn"><i class="fas fa-folder me-1"></i> Folder</button>
+                        </div>
+                        <div class="upload-area mb-2" id="dropZone">
+                            <i class="fas fa-file-upload display-4 mb-2" style="color:#3b82f6;"></i>
+                            <h6 id="dropZoneText">Drop files here or click</h6>
+                            <p class="small text-muted mb-0" id="dropZoneSubtext">Max: 10GB per Upload</p>
+                        </div>
+                        <hr class="my-2">
+                        <h6 class="mb-1"><i class="fas fa-download me-1" style="color:#10b981;"></i> Quick Receive</h6>
+                        <!-- Fake field to prevent browser autofill -->
+                    <input type="text" style="display:none" aria-hidden="true">
+                    <input type="text" class="form-control form-control-sm mb-1" id="quickReceiveCode" placeholder="Enter Code" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" name="setu_quick_code">
+                        <button class="btn btn-sync btn-sm w-100" id="quickDownloadBtn">Download</button>
+                    </div>
+                </div>
+
+                <!-- Mobile order: 3rd -->
+                <!-- CONNECTION CARD (shown when NOT logged in) -->
+                <div class="card p-9 mt-3 mobile-order-3" id="connectionCard">
+                    <div class="card-body">
+                        <h5 class="mb-2"><i class="fas fa-plug me-2"></i> Connection</h5>
+                        <div class="row g-1">
+                            <div class="col-6">
+                                <div class="connection-option p-2">
+                                    <i class="fas fa-mobile-alt mb-1" style="font-size:1.5rem;color:#3b82f6;"></i>
+                                    <h6 class="mb-1 small">Mobile</h6>
+                                    <button class="btn btn-connect btn-sm py-1 px-3" id="mobileConnectBtn">Connect</button>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="connection-option p-2">
+                                    <i class="fas fa-network-wired mb-1" style="font-size:1.5rem;color:#10b981;"></i>
+                                    <h6 class="mb-1 small">FTP</h6>
+                                    <button class="btn btn-connect btn-sm py-1 px-3">Settings</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between small align-items-center">
+                                <span><span class="pulse d-inline-block me-1" style="width:8px;height:8px;border-radius:50%;background:#10b981;"></span>Mobile</span>
+                                <span class="badge bg-warning text-dark" style="font-size:10px;">Offline</span>
+                            </div>
+                            <div class="d-flex justify-content-between small align-items-center mt-1">
+                                <span><span class="d-inline-block me-1" style="width:8px;height:8px;border-radius:50%;background:#ef4444;"></span>FTP</span>
+                                <span class="badge bg-success" style="font-size:10px;">Online</span>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                    </div>
+                </div>
+
+                <!-- Mobile order: 3rd (after connection) -->
+                <!-- PROFILE CARD (shown when logged in) — Modern Design -->
+                <div class="card p-9 mt-3 mobile-order-3" id="profileCard" style="display:none;">
+                    <div class="card-body">
+                        <!-- Profile Header with Gradient Avatar -->
+                        <div class="text-center mb-4">
+                            <div class="mx-auto mb-3 position-relative" style="width:72px;height:72px;">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100" style="background:linear-gradient(135deg,#667eea,#764ba2);font-size:28px;font-weight:700;color:#fff;box-shadow:0 4px 15px rgba(102,126,234,0.4);" id="profileAvatarCard">S</div>
+                                <div class="position-absolute bottom-0 end-0" style="width:18px;height:18px;border-radius:50%;background:#10b981;border:3px solid #fff;"></div>
+                            </div>
+                            <h5 class="mb-0 fw-bold" id="profileNameCard" style="color:#111827;">User</h5>
+                            <small class="text-muted" id="profileEmailCard" style="color:#6b7280 !important;">user@email.com</small>
+                        </div>
+
+                        <!-- Profile Fields — Clean Rows -->
+                        <div class="mb-3 small" id="profileDetailsContainer" style="background:#f8fafc;border-radius:12px;padding:4px 0;overflow:hidden;">
+                            <div class="profile-detail-item px-3">
+                                <span style="color:#6b7280;font-weight:500;"><i class="fas fa-tag me-2" style="color:#667eea;width:16px;"></i>Nickname</span>
+                                <span class="fw-semibold" id="profileNickname" style="color:#111827;">—</span>
+                            </div>
+                            <div class="profile-detail-item px-3">
+                                <span style="color:#6b7280;font-weight:500;"><i class="fas fa-phone me-2" style="color:#667eea;width:16px;"></i>Phone</span>
+                                <span class="fw-semibold" id="profilePhone" style="color:#111827;">—</span>
+                            </div>
+                            <div class="profile-detail-item px-3">
+                                <span style="color:#6b7280;font-weight:500;"><i class="fas fa-globe me-2" style="color:#667eea;width:16px;"></i>Country</span>
+                                <span class="fw-semibold" id="profileCountry" style="color:#111827;">—</span>
+                            </div>
+                            <div class="profile-detail-item px-3">
+                                <span style="color:#6b7280;font-weight:500;"><i class="fas fa-envelope me-2" style="color:#667eea;width:16px;"></i>Email</span>
+                                <span class="fw-semibold" id="profileEmailDetail" style="color:#111827;">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-grid gap-2">
+                            <button class="btn w-100 py-2" style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:10px;font-weight:600;font-size:14px;" onclick="window.location.href='setu.html'">
+                                <i class="fas fa-door-open me-2"></i> Enter Room
+                            </button>
+                            <div class="d-flex gap-2">
+                                <button class="btn flex-fill py-2" style="background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;border-radius:10px;font-weight:500;font-size:13px;" onclick="window.location.href='auth.html'">
+                                    <i class="fas fa-edit me-1"></i> Edit
+                                </button>
+                                <button class="btn flex-fill py-2" id="profileLogoutBtn" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;border-radius:10px;font-weight:500;font-size:13px;">
+                                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN (desktop): File Transfer — Mobile order: 2nd -->
+            <div class="col-lg-7 mb-4 mobile-order-2">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4"><i class="fas fa-cloud-upload-alt me-2"></i> File Transfer</h3>
+                        <div class="text-center mb-3">
+                            <div class="security-badge"><i class="fas fa-lock me-1"></i> Optional Password Protection</div>
+                            <div class="security-badge"><i class="fas fa-clock me-1"></i> Auto-Delete: 7 min</div>
+                            <div class="security-badge"><i class="fas fa-shield-alt me-1"></i> Flexible Downloads</div>
+                        </div>
+                        <ul class="nav nav-tabs nav-justified mb-3" id="myTab" role="tablist">
+                            <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#upload">Upload</button></li>
+                            <li class="nav-item"><button class="nav-link" id="receive-tab" data-bs-toggle="tab" data-bs-target="#receive">Receive</button></li>
+                            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="upload">
+                                <!-- Selected Files -->
+                                <div class="selected-files-scroll" id="fileList">
+                                    <h5 style="color:#3b82f6;font-weight:700;font-size:0.95rem;"><i class="fas fa-list me-2"></i>Selected Files</h5>
+                                    <div id="selectedFiles">
+                                        <p class="text-muted text-center py-3 small">No files selected. Use the upload area on the right.</p>
+                                    </div>
+                                </div>
+                                <!-- Password Protection -->
+                                <div class="mb-2 mt-3">
+                                    <label class="form-label small"><i class="fas fa-key me-1"></i> Password (Optional)</label>
+                                    <!-- Fake password field to prevent browser autofill -->
+                                    <input type="text" style="display:none" aria-hidden="true">
+                                    <input type="password" class="form-control form-control-sm" id="filePassword" placeholder="Protect files with password" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly')" name="setu_file_pw">
+                                </div>
+                                <!-- One-Time Download -->
+                                <div class="mb-3">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="oneTimeDownload">
+                                        <span><i class="fas fa-download me-1"></i><strong>One-Time Download</strong></span>
+                                    </label>
+                                </div>
+                                <!-- Generate QR -->
+                                <div class="text-center mb-3">
+                                    <button class="btn btn-sync" id="getQrBtn" style="padding:12px 40px;">
+                                        <i class="fas fa-qrcode me-2"></i> Generate QR Code
+                                    </button>
+                                </div>
+                                <!-- Upload Result (QR + Share Info) -->
+                                <div id="uploadResult" class="mt-2"></div>
+                            </div>
+                            <div class="tab-pane fade" id="receive">
+                                <div class="text-center p-3">
+                                    <i class="fas fa-download display-4 mb-2" style="color:#3b82f6;"></i>
+                                    <h5>Receive Files</h5>
+                                    <p class="small text-muted">Enter transfer code</p>
+                                    <input type="text" class="form-control form-control-lg text-center mb-2" id="receiveCode" placeholder="Enter Code" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" name="setu_receive_code">
+                                    <button class="btn btn-sync w-100 mb-2" id="downloadBtn">Download Files</button>
+                                    <small class="text-muted"><i class="fas fa-info-circle me-1"></i>Auto-deletes after 7 min</small>
+                                </div>
+                                <div id="downloadArea" style="display:none;">
+                                    <hr>
+                                    <div class="text-center mb-2">
+                                        <div class="timer-display" id="timerDisplay">
+                                            <i class="fas fa-clock me-2"></i>Time: <span id="timeRemaining">7:00</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="mb-2" style="color:#3b82f6;font-weight:700;">Available Files</h6>
+                                    <div id="downloadFilesList"></div>
+                                    <div id="passwordArea" style="display:none;" class="mb-2">
+                                        <input type="text" style="display:none" aria-hidden="true">
+                                        <input type="password" class="form-control" id="downloadPassword" placeholder="Enter password" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly')" name="setu_dl_pw">
+                                    </div>
+                                    <div class="d-grid gap-1">
+                                        <button class="btn btn-sync btn-sm" id="downloadFilesBtn"><i class="fas fa-download me-2"></i>Download All</button>
+                                        <button class="btn btn-expire btn-sm" id="expireNowBtn"><i class="fas fa-times-circle me-2"></i>Expire Link</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="history">
+                                <h6 class="mb-2" style="color:#3b82f6;font-weight:700;">Transfer History</h6>
+                                <div id="historyList"><p class="text-muted text-center small">No transfers yet</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+      .footer {
+        --bg-2: #FFFFFF;
+        --border: rgba(0,0,0,0.08);
+        --slate: #6B6786;
+        --slate-2: #40309e;
+        --text: #1C1A29;
+        --ink: #1C1A29;
+        --surface: rgba(0,0,0,0.03);
+        --surface-2: rgba(0,0,0,0.06);
+        background-color: var(--bg-2);
+        color: var(--text black);
+        font-family: 'Inter', sans-serif;
+      }
+      .footer a {
+        text-decoration: none;
+      }
+      
+    </style>
+
+    <footer class="footer">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:48px;padding:60px 24px 32px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div class="nav-logo" style="width:38px;height:38px;border-radius:10px;overflow:hidden;background:whitesmoke;border:1px solid var(--border);"><img src="favicons/logo1.webp" alt="Setu Logo" style="width:100%;height:100%;object-fit:cover;"></div>
+            <span style="font-size:18px;font-weight:800;">Setu</span>
+          </div>
+          <p style="color:var(black);font-size:13.5px;line-height:1.7;max-width:260px;">Real-time collaboration platform — bridge the gap. Share files, chat, and collaborate instantly, from any browser.</p>
+          <div style="display:flex;gap:10px;margin-top:18px;">
+            <a href="https://github.com/Infinity0-0/Setu_Bridge.git" target="_blank" rel="noopener" title="GitHub" style="width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;color:var(--slate);transition:background .2s,color .2s,transform .2s;text-decoration:none;" onmouseover="this.style.background='var(--surface-2)';this.style.color='var(--text)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--surface)';this.style.color='var(--slate)';this.style.transform='translateY(0)'">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Platform</h4>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:10px;"><a href="index.html" style="color:var(--text);font-size:14px;text-decoration:none;">Home</a></li>
+            <li style="margin-bottom:10px;"><a href="setu.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Open App</a></li>
+            <li style="margin-bottom:10px;"><a href="How_It_Works.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">How It Works</a></li>
+            <li style="margin-bottom:10px;"><a href="feature.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Features</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Support</h4>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+            <li style="margin-bottom:10px;"><a href="setu_contact.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Contact Us</a></li>
+            <li style="margin-bottom:10px;"><a href="How_It_Works.html#security" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Security</a></li>
+            <li style="margin-bottom:10px;"><a href="How_It_Works.html#privacy" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Data Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Legal</h4>
+          <ul style="list-style:none;">
+            <li style="margin-bottom:10px;"><a href="privacy_policy.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Privacy Policy</a></li>
+            <li style="margin-bottom:10px;"><a href="terms.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Terms & Conditions</a></li>
+            <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="max-width:1180px;margin:0 auto;padding:24px 24px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="color:var(--slate-2);font-size:13px;">© 2025 Setu-Bridge. Built with ❤️ in India.</p>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <a href="privacy_policy.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Privacy Policy</a>
+          <a href="terms.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Terms & Conditions</a>
+          <a href="faq.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">FAQ</a>
+          <a href="setu_contact.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="auth.js?v=4.0"></script>
+    <script src="main.js"></script>
+    <script>
+        /* ─── Auth navbar + profile card handler for index.html ─── */
+        (async function() {
+            try {
+                const status = await AUTH.checkAuthStatus();
+                // Update last active timestamp
+                try { await AUTH.updateLastActive(); } catch(e) {}
+                
+                const connectBtn = document.getElementById('authBtnConnect');
+                const profileBtn = document.getElementById('authBtnProfile');
+                const navName = document.getElementById('navUserName');
+                const logoutBtn = document.getElementById('navLogoutBtn');
+                const connectBtnMob = document.getElementById('authBtnConnectMobile');
+                const profileBtnMob = document.getElementById('authBtnProfileMobile');
+                const navNameMob = document.getElementById('navUserNameMobile');
+                const logoutBtnMob = document.getElementById('navLogoutBtnMobile');
+                const connectionCard = document.getElementById('connectionCard');
+                const profileCard = document.getElementById('profileCard');
+                const mobileConnectBtn = document.getElementById('mobileConnectBtn');
+                const navProfileLink = document.getElementById('navProfileLink');
+                const navProfileLinkMob = document.getElementById('navProfileLinkMobile');
+
+                /* ─── Mobile Connect → auth-gated redirect to setu.html ─── */
+                if (mobileConnectBtn) {
+                    mobileConnectBtn.addEventListener('click', async function() {
+                        const s = await AUTH.checkAuthStatus();
+                        if (s.authenticated) {
+                            window.location.href = 'setu.html';
+                        } else {
+                            window.location.href = '/auth.html?redirect=/setu.html';
+                        }
+                    });
+                }
+
+                if (status.authenticated && status.user) {
+                    // ─── Logged in → show profile dropdown + profile card ───
+                    if (connectBtn) connectBtn.style.display = 'none';
+                    if (profileBtn) profileBtn.style.display = 'block';
+                    if (navName) navName.textContent = status.user.name || status.user.email || 'User';
+                    // Mobile auth buttons sync
+                    if (connectBtnMob) connectBtnMob.style.display = 'none';
+                    if (profileBtnMob) profileBtnMob.style.display = 'block';
+                    if (navNameMob) navNameMob.textContent = status.user.name || status.user.email || 'User';
+
+                    // Show profile card, hide connection card with animation
+                    if (connectionCard) {
+                        connectionCard.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        connectionCard.style.opacity = '0';
+                        connectionCard.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            connectionCard.style.display = 'none';
+                        }, 300);
+                    }
+                    if (profileCard) {
+                        profileCard.style.display = 'block';
+                        // Add slide-in animation class
+                        profileCard.classList.add('profile-card-slide');
+                    }
+
+                    /* ─── Profile Nav Link → smooth scroll to profile card ─── */
+                    if (navProfileLink) {
+                        navProfileLink.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            // Close the dropdown
+                            const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('[data-bs-toggle="dropdown"]'));
+                            if (dropdown) dropdown.hide();
+                            
+                            // Smooth scroll to profile card
+                            if (profileCard) {
+                                // Re-trigger slide animation
+                                profileCard.classList.remove('profile-card-slide');
+                                void profileCard.offsetHeight;
+                                profileCard.classList.add('profile-card-slide');
+                                
+                                // Re-trigger row animations
+                                const rows = document.querySelectorAll('.profile-detail-item');
+                                rows.forEach((row, i) => {
+                                    row.style.opacity = '0';
+                                    row.style.animation = 'none';
+                                    void row.offsetHeight;
+                                    row.style.animation = `rowSlide 0.3s ease forwards`;
+                                    row.style.animationDelay = `${0.1 + i * 0.05}s`;
+                                });
+                                
+                                profileCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        });
+                    }
+
+                    // Fetch full profile with nickname and phone
+                    try {
+                        const fullUser = await AUTH.getFullProfile();
+                        if (fullUser) {
+                            const avatar = document.getElementById('profileAvatarCard');
+                            const nameEl = document.getElementById('profileNameCard');
+                            const emailEl = document.getElementById('profileEmailCard');
+                            const nickEl = document.getElementById('profileNickname');
+                            const phoneEl = document.getElementById('profilePhone');
+                            const countryEl = document.getElementById('profileCountry');
+                            const emailDetail = document.getElementById('profileEmailDetail');
+
+                            if (avatar) avatar.textContent = (fullUser.nickname || fullUser.name || 'U').charAt(0).toUpperCase();
+                            if (nameEl) nameEl.textContent = fullUser.name || fullUser.nickname || 'User';
+                            if (emailEl) emailEl.textContent = fullUser.email || '';
+                            if (nickEl) nickEl.textContent = fullUser.nickname || 'Not set';
+                            if (phoneEl) phoneEl.textContent = fullUser.phone || 'Not set';
+                            if (countryEl) countryEl.textContent = fullUser.country || 'Not set';
+                            if (emailDetail) emailDetail.textContent = fullUser.email || '';
+
+                            // Update nav name with nickname if available
+                            if (navName) navName.textContent = fullUser.nickname || fullUser.name || fullUser.email || 'User';
+                        }
+                    } catch(e) {
+                        console.warn('Could not load full profile:', e);
+                    }
+
+                    // Logout handlers (navbar + profile card)
+                    const doLogout = async function(e) {
+                        if (e) e.preventDefault();
+                        await AUTH.logout();
+                        window.location.reload();
+                    };
+                    if (logoutBtn) logoutBtn.addEventListener('click', doLogout);
+                    if (logoutBtnMob) logoutBtnMob.addEventListener('click', doLogout);
+                    const profileLogoutBtn = document.getElementById('profileLogoutBtn');
+                    if (profileLogoutBtn) profileLogoutBtn.addEventListener('click', doLogout);
+
+                } else {
+                    // ─── Not logged in → show Connect button + connection card ───
+                    if (connectBtn) connectBtn.style.display = 'block';
+                    if (profileBtn) profileBtn.style.display = 'none';
+                    if (connectBtnMob) connectBtnMob.style.display = 'block';
+                    if (profileBtnMob) profileBtnMob.style.display = 'none';
+                    if (connectionCard) {
+                        connectionCard.style.display = 'block';
+                        connectionCard.style.opacity = '1';
+                        connectionCard.style.transform = 'translateY(0)';
+                    }
+                    if (profileCard) profileCard.style.display = 'none';
+                }
+            } catch(e) {
+                console.warn('Auth check failed:', e);
+                const connectBtn = document.getElementById('authBtnConnect');
+                const connectionCard = document.getElementById('connectionCard');
+                const profileCard = document.getElementById('profileCard');
+                if (connectBtn) connectBtn.style.display = 'block';
+                if (connectionCard) connectionCard.style.display = 'block';
+                if (profileCard) profileCard.style.display = 'none';
+            }
+        })();
+    </script>
+</body>
+</html>

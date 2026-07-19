@@ -1,0 +1,47 @@
+node_modules/
+dist/
+.env
+.env.*
+.env.template
+.env.local
+.env.production
+.env.staging
+.DS_Store
+
+# Cloudflare Wrangler config (contains account IDs, tokens)
+wrangler.jsonc
+wrangler.toml
+.wrangler/
+
+# Secret / credential files
+secrets.json
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python scripts (utility/build scripts, not needed in repo)
+*.py
+__pycache__/
+*.pyc
+
+# Editor & OS
+.vscode/
+.idea/
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Cache and temporary files
+.cache/
+temp/
+tmp/
+*.tmp
+
+# Service worker / PWA generated files (if any)
+sw.js
+workbox-*.js

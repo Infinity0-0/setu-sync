@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setu · Login / Sign Up</title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+
+    <meta name="description" content="Sign in or create your Setu account — secure file sharing, simplified.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <!-- Meta tag -->
+    <title>Setu Login & Sign Up | Secure Account Access</title>
+    <meta name="description" content="Sign in or create your Setu account — secure file sharing, simplified.">
+    <meta name="keywords" content="Setu, setu login/signup, file sharing, setusync,">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="canonical" href="https://setusync.space/">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu Login & Sign Up | Secure Account Access">
+    <meta property="og:description" content="Sign in or create your Setu account — secure file sharing, simplified.">
+    <meta property="og:url" content="https://setusync.space/auth.html">
+    <meta property="og:site_name" content="Setu">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+    <style>
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-ultra-light: #eef2ff;
+            --primary-glow: rgba(99, 102, 241, 0.18);
+            --accent: #06b6d4;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f0f4ff;
+            --surface: #ffffff;
+            --surface-hover: #f8faff;
+            --border: #e2e8f0;
+            --border-focus: #6366f1;
+            --text-primary: #1e1b4b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --shadow-sm: 0 1px 3px rgba(99,102,241,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 24px rgba(99,102,241,0.10), 0 1px 4px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 60px rgba(99,102,241,0.14), 0 4px 16px rgba(0,0,0,0.06);
+            --radius: 14px;
+            --radius-sm: 10px;
+            --radius-xs: 8px;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Animated background ─── */
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99,102,241,0.10) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 90%, rgba(6,182,212,0.08) 0%, transparent 60%),
+                linear-gradient(160deg, #eef2ff 0%, #f0f4ff 50%, #fafbff 100%);
+        }
+
+        /* Floating soft blobs */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+            animation: blobDrift ease-in-out infinite;
+        }
+        .blob-1 {
+            width: 380px; height: 380px;
+            background: rgba(99,102,241,0.12);
+            top: -100px; left: -100px;
+            animation-duration: 22s;
+        }
+        .blob-2 {
+            width: 300px; height: 300px;
+            background: rgba(6,182,212,0.09);
+            bottom: -80px; right: -80px;
+            animation-duration: 28s;
+            animation-delay: -8s;
+        }
+        .blob-3 {
+            width: 200px; height: 200px;
+            background: rgba(139,92,246,0.07);
+            top: 40%; left: 60%;
+            animation-duration: 18s;
+            animation-delay: -4s;
+        }
+        @keyframes blobDrift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-15px, 25px) scale(0.97); }
+        }
+
+        /* ─── Auth Card ─── */
+        .auth-card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 480px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 44px 40px 36px;
+            box-shadow: var(--shadow-lg);
+            animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes cardIn {
+            0%   { opacity: 0; transform: translateY(32px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ─── Brand ─── */
+        .auth-brand {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .brand-icon {
+            width: 60px; height: 60px;
+            margin: 0 auto 14px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(99,102,241,0.32);
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 8px 28px rgba(99,102,241,0.32); }
+            50%       { box-shadow: 0 8px 40px rgba(99,102,241,0.50); transform: scale(1.04); }
+        }
+        .auth-brand h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        .auth-brand h1 span { color: var(--primary); }
+        .auth-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+            min-height: 20px;
+        }
+
+        /* ─── Tabs ─── */
+        .auth-tabs {
+            display: flex;
+            gap: 6px;
+            background: var(--primary-ultra-light);
+            border-radius: 12px;
+            padding: 5px;
+            margin-bottom: 28px;
+        }
+        .auth-tab {
+            flex: 1;
+            padding: 11px 16px;
+            text-align: center;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            background: transparent;
+            letter-spacing: 0.2px;
+        }
+        .auth-tab.active {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(99,102,241,0.15);
+        }
+        .auth-tab:hover:not(.active) { color: var(--text-secondary); }
+
+        /* ─── Form ─── */
+        .auth-form {
+            display: none;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .auth-form.active {
+            display: flex;
+            animation: formIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        @keyframes formIn {
+            0%   { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-label {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+        .form-label i { margin-right: 5px; opacity: 0.7; font-size: 11px; }
+
+        /* ─── Inputs ─── */
+        .form-control {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: #fff;
+            transition: all 0.25s ease;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+        .form-control::placeholder { color: var(--text-muted); }
+        .form-control:disabled {
+            background: var(--surface-hover);
+            cursor: not-allowed;
+            opacity: 0.65;
+        }
+
+        /* ─── Password toggle wrapper ─── */
+        .input-pw-wrap {
+            position: relative;
+        }
+        .input-pw-wrap .form-control { padding-right: 46px; }
+        .toggle-pw {
+            position: absolute;
+            right: 12px; top: 50%;
+            transform: translateY(-50%);
+            background: none; border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 15px;
+            padding: 4px;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .toggle-pw:hover { color: var(--primary); }
+
+        /* ─── Phone Field ─── */
+        .phone-row {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+        .phone-code-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+            transition: all 0.25s ease;
+            min-width: 96px;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+        }
+        .phone-code-btn:hover, .phone-code-btn.open {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+        .phone-code-btn .flag { font-size: 18px; line-height: 1; }
+        .phone-code-btn .dial { font-size: 13px; color: var(--primary); }
+        .phone-code-btn .caret {
+            margin-left: auto;
+            font-size: 10px;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+        .phone-code-btn.open .caret { transform: rotate(180deg); }
+        .phone-num-input { flex: 1; min-width: 0; }
+        .phone-digit-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        /* Country Code Dropdown */
+        .code-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            width: 280px;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            overflow: hidden;
+            display: none;
+            animation: dropIn 0.2s ease;
+        }
+        .code-dropdown.open { display: block; }
+        @keyframes dropIn {
+            0%   { opacity: 0; transform: translateY(-6px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .code-search {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .code-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-xs);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            outline: none;
+        }
+        .code-search input:focus { border-color: var(--primary); }
+        .code-list {
+            max-height: 240px;
+            overflow-y: auto;
+            padding: 4px 0;
+        }
+        .code-list::-webkit-scrollbar { width: 5px; }
+        .code-list::-webkit-scrollbar-track { background: transparent; }
+        .code-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        .code-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 16px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 13.5px;
+        }
+        .code-item:hover { background: var(--primary-ultra-light); }
+        .code-item .flag { font-size: 18px; }
+        .code-item .name { flex: 1; color: var(--text-primary); }
+        .code-item .dial { color: var(--primary); font-weight: 600; font-size: 13px; }
+
+        /* ─── Country Select ─── */
+        .country-select-wrap {
+            position: relative;
+        }
+        .country-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: #fff;
+            cursor: pointer;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            transition: all 0.25s ease;
+            width: 100%;
+            text-align: left;
+        }
+        .country-btn .placeholder { color: var(--text-muted); }
+        .country-btn .caret { margin-left: auto; font-size: 11px; color: var(--text-muted); transition: transform 0.2s; }
+        .country-btn.open, .country-btn:hover { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow); }
+        .country-btn.open .caret { transform: rotate(180deg); }
+
+        .country-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0; right: 0;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 998;
+            overflow: hidden;
+            display: none;
+            animation: dropIn 0.2s ease;
+        }
+        .country-dropdown.open { display: block; }
+        .country-search {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .country-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-xs);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            outline: none;
+        }
+        .country-search input:focus { border-color: var(--primary); }
+        .country-list {
+            max-height: 210px;
+            overflow-y: auto;
+            padding: 4px 0;
+        }
+        .country-list::-webkit-scrollbar { width: 5px; }
+        .country-list::-webkit-scrollbar-track { background: transparent; }
+        .country-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        .country-item {
+            padding: 9px 16px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+        .country-item:hover { background: var(--primary-ultra-light); }
+        .country-item.selected { background: var(--primary-ultra-light); color: var(--primary); font-weight: 600; }
+
+        /* Gender */
+        .gender-select {
+            padding: 13px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: #fff;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: 100%;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 38px;
+        }
+        .gender-select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow); }
+        .gender-select option { background: #fff; color: var(--text-primary); }
+
+        /* ─── Buttons ─── */
+        .auth-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.3px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .auth-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0);
+            transition: background 0.2s;
+        }
+        .auth-btn:hover::after { background: rgba(255,255,255,0.12); }
+        .auth-btn:active { transform: scale(0.98); }
+        .auth-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(99,102,241,0.30);
+        }
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: 0 8px 28px rgba(99,102,241,0.40);
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: var(--primary-ultra-light);
+            color: var(--primary);
+            border: 1.5px solid rgba(99,102,241,0.2);
+        }
+        .btn-ghost:hover:not(:disabled) { background: #e0e7ff; }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(239,68,68,0.25);
+        }
+
+        /* ─── Divider ─── */
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .auth-divider::before, .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── Messages ─── */
+        .auth-error, .auth-success {
+            display: none;
+            padding: 12px 16px;
+            border-radius: var(--radius-xs);
+            font-size: 13.5px;
+            font-weight: 500;
+            align-items: center;
+            gap: 8px;
+        }
+        .auth-error {
+            background: #fff5f5;
+            border: 1.5px solid #fecaca;
+            color: #dc2626;
+            animation: shake 0.4s ease;
+        }
+        .auth-success {
+            background: #f0fdf4;
+            border: 1.5px solid #bbf7d0;
+            color: #15803d;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%       { transform: translateX(-6px); }
+            40%       { transform: translateX(6px); }
+            60%       { transform: translateX(-4px); }
+            80%       { transform: translateX(4px); }
+        }
+
+        /* ─── Spinner ─── */
+        .spinner-sm {
+            width: 17px; height: 17px;
+            border: 2.5px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            display: inline-block;
+        }
+        .spinner-sm.dark {
+            border: 2.5px solid rgba(99,102,241,0.2);
+            border-top-color: var(--primary);
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ─── Profile (logged-in) ─── */
+        .auth-profile { display: none; flex-direction: column; gap: 16px; }
+        .auth-profile.active { display: flex; animation: formIn 0.4s ease; }
+
+        .profile-header {
+            text-align: center;
+            padding: 24px 20px 20px;
+            background: linear-gradient(135deg, var(--primary-ultra-light), #fff);
+            border: 1px solid rgba(99,102,241,0.15);
+            border-radius: 18px;
+        }
+        .profile-avatar {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; font-weight: 800;
+            color: #fff;
+            margin: 0 auto 12px;
+            box-shadow: 0 6px 24px rgba(99,102,241,0.28);
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        .profile-name { font-size: 20px; font-weight: 700; color: var(--text-primary); }
+        .profile-email { font-size: 13.5px; color: var(--text-muted); margin-top: 3px; }
+
+        .profile-details {
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .profile-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 18px;
+            border-bottom: 1px solid var(--border);
+            animation: rowIn 0.3s ease forwards;
+            opacity: 0;
+        }
+        .profile-row:last-child { border-bottom: none; }
+        @keyframes rowIn {
+            0%   { opacity: 0; transform: translateX(-8px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .profile-row:nth-child(1) { animation-delay: 0.05s; }
+        .profile-row:nth-child(2) { animation-delay: 0.10s; }
+        .profile-row:nth-child(3) { animation-delay: 0.15s; }
+        .profile-row:nth-child(4) { animation-delay: 0.20s; }
+        .profile-row-label { font-size: 12.5px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.4px; }
+        .profile-row-value { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+
+        /* ─── Footer ─── */
+        .auth-footer {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .auth-footer a:hover { text-decoration: underline; }
+
+        /* ─── Scrollbar for card ─── */
+        .auth-card { max-height: 98vh; overflow-y: auto; }
+        .auth-card::-webkit-scrollbar { width: 5px; }
+        .auth-card::-webkit-scrollbar-track { background: transparent; }
+        .auth-card::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 520px) {
+            .auth-card { padding: 32px 20px 28px; border-radius: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="auth-page">
+        <div class="auth-card">
+
+            <!-- Brand -->
+            <div class="auth-brand">
+                <div class="brand-icon" style="background: transparent; box-shadow: none;"><img src="favicons/logo1.webp" alt="Setu Logo" style="width: 100%; height: 100%; border-radius: 18px; object-fit: cover;"></div>
+                <h1>Welcome to <span>Setu</span></h1>
+                <p id="tagline">Secure file sharing, simplified.</p>
+            </div>
+
+            <!-- Messages -->
+            <div class="auth-error" id="authError"></div>
+            <div class="auth-success" id="authSuccess"></div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs" id="authTabs">
+                <button class="auth-tab active" data-tab="login">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="auth-tab" data-tab="signup">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <!-- ═══ LOGIN FORM ═══ -->
+            <div class="auth-form active" id="loginForm">
+                <!-- Anti-autofill decoy -->
+                <input type="text" style="display:none;" aria-hidden="true" tabindex="-1">
+                <input type="password" style="display:none;" aria-hidden="true" tabindex="-1">
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="text" class="form-control" id="loginEmail"
+                        placeholder="you@example.com"
+                        autocomplete="new-password" name="setu_lgn_em"
+                        readonly onfocus="this.removeAttribute('readonly')">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-lock"></i> Password</label>
+                    <div class="input-pw-wrap">
+                        <input type="password" class="form-control" id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="new-password" name="setu_lgn_pw"
+                            readonly onfocus="this.removeAttribute('readonly')">
+                        <button type="button" class="toggle-pw" onclick="togglePassword('loginPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="auth-btn btn-primary" id="loginBtn" onclick="handleLogin()">
+                    <i class="fas fa-shield-halved"></i> Secure Login
+                </button>
+
+                <div class="auth-divider">or</div>
+
+                <button class="auth-btn btn-ghost" onclick="window.location.href='/'">
+                    <i class="fas fa-arrow-left"></i> Browse as Guest
+                </button>
+            </div>
+
+            <!-- ═══ SIGNUP FORM ═══ -->
+            <div class="auth-form" id="signupForm">
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" class="form-control" id="signupName"
+                        placeholder="John Doe" autocomplete="off" name="setu_su_name">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" class="form-control" id="signupEmail"
+                        placeholder="you@example.com" autocomplete="off" name="setu_su_email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-lock"></i> Password</label>
+                    <div class="input-pw-wrap">
+                        <input type="password" class="form-control" id="signupPassword"
+                            placeholder="Create a strong password" autocomplete="off" name="setu_su_pw">
+                        <button type="button" class="toggle-pw" onclick="togglePassword('signupPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <div class="input-pw-wrap">
+                        <input type="password" class="form-control" id="signupConfirm"
+                            placeholder="Confirm your password" autocomplete="off" name="setu_su_confirm">
+                        <button type="button" class="toggle-pw" onclick="togglePassword('signupConfirm', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phone field with country code picker -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-phone"></i> Phone Number <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">(Optional — 10 digits)</span></label>
+                    <div class="phone-row" style="position:relative;">
+                        <!-- Country Code Button -->
+                        <button type="button" class="phone-code-btn" id="signupPhoneCodeBtn" onclick="toggleCodeDropdown('signup')">
+                            <span class="flag" id="signupPhoneFlag">🇮🇳</span>
+                            <span class="dial" id="signupPhoneDial">+91</span>
+                            <i class="fas fa-chevron-down caret" id="signupPhoneCodeCaret"></i>
+                        </button>
+                        <!-- Dropdown -->
+                        <div class="code-dropdown" id="signupCodeDropdown">
+                            <div class="code-search">
+                                <input type="text" placeholder="Search country..." id="signupCodeSearch" oninput="filterCodeList('signup', this.value)">
+                            </div>
+                            <div class="code-list" id="signupCodeList"></div>
+                        </div>
+                        <!-- Number Input -->
+                        <input type="tel" class="form-control phone-num-input" id="signupPhoneNum"
+                            placeholder="9876543210" maxlength="10" autocomplete="off"
+                            oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)"
+                            style="flex:1;">
+                    </div>
+                    <div class="phone-digit-hint">Enter exactly 10 digits after the country code</div>
+                    <!-- Hidden store for country code value -->
+                    <input type="hidden" id="signupPhoneCode" value="+91">
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-venus-mars"></i> Gender</label>
+                    <select class="gender-select" id="signupGender">
+                        <option value="">Prefer not to say</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Country (custom dropdown — name only) -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-globe"></i> Country</label>
+                    <div class="country-select-wrap">
+                        <button type="button" class="country-btn" id="signupCountryBtn" onclick="toggleCountryDropdown('signup')">
+                            <span id="signupCountryBtnText" class="placeholder">Select your country</span>
+                            <i class="fas fa-chevron-down caret" id="signupCountryCaret"></i>
+                        </button>
+                        <input type="hidden" id="signupCountry" value="">
+                        <div class="country-dropdown" id="signupCountryDropdown">
+                            <div class="country-search">
+                                <input type="text" placeholder="Search country..." id="signupCountrySearch" oninput="filterCountryList('signup', this.value)">
+                            </div>
+                            <div class="country-list" id="signupCountryList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="auth-btn btn-primary" id="signupBtn" onclick="handleSignup()" style="margin-top:4px;">
+                    <i class="fas fa-shield-halved"></i> Create Secure Account
+                </button>
+
+                <div class="auth-divider">or</div>
+
+                <button class="auth-btn btn-ghost" onclick="window.location.href='/'">
+                    <i class="fas fa-arrow-left"></i> Browse as Guest
+                </button>
+            </div>
+
+            <!-- ═══ PROFILE (logged-in) ═══ -->
+            <div class="auth-profile" id="authProfile">
+
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">S</div>
+                    <div class="profile-name" id="profileName">User</div>
+                    <div class="profile-email" id="profileEmail">user@example.com</div>
+                </div>
+
+                <!-- Profile Details -->
+                <div class="profile-details" id="profileDetails">
+                    <div class="profile-row">
+                        <span class="profile-row-label">Nickname</span>
+                        <span class="profile-row-value" id="profNicknameView">—</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="profile-row-label">Phone</span>
+                        <span class="profile-row-value" id="profPhoneView">—</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="profile-row-label">Gender</span>
+                        <span class="profile-row-value" id="profGenderView">—</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="profile-row-label">Country</span>
+                        <span class="profile-row-value" id="profCountryView">—</span>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Form -->
+                <div class="auth-form" id="editProfileForm" style="gap:14px;">
+                    <div style="font-size:13px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+                        Edit Profile
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Display Name <span style="font-weight:400;font-size:11px;text-transform:none;">(fixed)</span></label>
+                        <input type="text" class="form-control" id="editName" placeholder="Your name" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Nickname <span style="font-weight:400;font-size:11px;text-transform:none;color:var(--success);">✏ editable</span></label>
+                        <input type="text" class="form-control" id="editNickname" placeholder="e.g. Johnny">
+                    </div>
+
+                    <!-- Edit Phone -->
+                    <div class="form-group">
+                        <label class="form-label"><i class="fas fa-phone"></i> Phone Number <span style="font-weight:400;font-size:11px;text-transform:none;">(fixed)</span></label>
+                        <div class="phone-row" style="position:relative;">
+                            <button type="button" class="phone-code-btn" id="editPhoneCodeBtn" disabled style="opacity:0.55;cursor:not-allowed;">
+                                <span class="flag" id="editPhoneFlag">🇮🇳</span>
+                                <span class="dial" id="editPhoneDialShow">+91</span>
+                            </button>
+                            <input type="text" class="form-control phone-num-input" id="editPhone"
+                                placeholder="Phone (fixed)" readonly style="opacity:0.55;cursor:not-allowed;">
+                            <input type="hidden" id="editPhoneCode" value="+91">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Gender <span style="font-weight:400;font-size:11px;text-transform:none;">(fixed)</span></label>
+                        <select class="gender-select" id="editGender" disabled style="opacity:0.55;cursor:not-allowed;">
+                            <option value="">Prefer not to say</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Country <span style="font-weight:400;font-size:11px;text-transform:none;">(fixed)</span></label>
+                        <input type="text" class="form-control" id="editCountryDisplay" placeholder="Country" readonly style="opacity:0.55;cursor:not-allowed;">
+                        <input type="hidden" id="editCountry" value="">
+                    </div>
+
+                    <button class="auth-btn btn-primary" id="saveProfileBtn" onclick="handleSaveProfile()">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <button class="auth-btn btn-ghost" id="editProfileToggleBtn" onclick="toggleProfileEdit()">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                    <a href="/" class="auth-btn btn-primary" style="text-decoration:none;">
+                        <i class="fas fa-home"></i> Go to Home
+                    </a>
+                    <button class="auth-btn btn-ghost" id="logoutBtn" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <a href="/">← Back to Setu</a>
+                </div>
+            </div>
+
+        </div><!-- /.auth-card -->
+    </div><!-- /.auth-page -->
+
+    <script src="auth.js?v=3.0"></script>
+    <script>
+    // ══════════════════════════════════════════════════════════════
+    //  COUNTRY & DIAL-CODE DATA
+    // ══════════════════════════════════════════════════════════════
+    const COUNTRIES = [
+        {name:"Bharat (India)",flag:"🇮🇳",dial:"+91"},
+        {name:"Afghanistan",flag:"🇦🇫",dial:"+93"},
+        {name:"Albania",flag:"🇦🇱",dial:"+355"},
+        {name:"Algeria",flag:"🇩🇿",dial:"+213"},
+        {name:"Andorra",flag:"🇦🇩",dial:"+376"},
+        {name:"Angola",flag:"🇦🇴",dial:"+244"},
+        {name:"Antigua and Barbuda",flag:"🇦🇬",dial:"+1-268"},
+        {name:"Argentina",flag:"🇦🇷",dial:"+54"},
+        {name:"Armenia",flag:"🇦🇲",dial:"+374"},
+        {name:"Australia",flag:"🇦🇺",dial:"+61"},
+        {name:"Austria",flag:"🇦🇹",dial:"+43"},
+        {name:"Azerbaijan",flag:"🇦🇿",dial:"+994"},
+        {name:"Bahamas",flag:"🇧🇸",dial:"+1-242"},
+        {name:"Bahrain",flag:"🇧🇭",dial:"+973"},
+        {name:"Bangladesh",flag:"🇧🇩",dial:"+880"},
+        {name:"Barbados",flag:"🇧🇧",dial:"+1-246"},
+        {name:"Belarus",flag:"🇧🇾",dial:"+375"},
+        {name:"Belgium",flag:"🇧🇪",dial:"+32"},
+        {name:"Belize",flag:"🇧🇿",dial:"+501"},
+        {name:"Benin",flag:"🇧🇯",dial:"+229"},
+        {name:"Bhutan",flag:"🇧🇹",dial:"+975"},
+        {name:"Bolivia",flag:"🇧🇴",dial:"+591"},
+        {name:"Bosnia and Herzegovina",flag:"🇧🇦",dial:"+387"},
+        {name:"Botswana",flag:"🇧🇼",dial:"+267"},
+        {name:"Brazil",flag:"🇧🇷",dial:"+55"},
+        {name:"Brunei",flag:"🇧🇳",dial:"+673"},
+        {name:"Bulgaria",flag:"🇧🇬",dial:"+359"},
+        {name:"Burkina Faso",flag:"🇧🇫",dial:"+226"},
+        {name:"Burundi",flag:"🇧🇮",dial:"+257"},
+        {name:"Cabo Verde",flag:"🇨🇻",dial:"+238"},
+        {name:"Cambodia",flag:"🇰🇭",dial:"+855"},
+        {name:"Cameroon",flag:"🇨🇲",dial:"+237"},
+        {name:"Canada",flag:"🇨🇦",dial:"+1"},
+        {name:"Central African Republic",flag:"🇨🇫",dial:"+236"},
+        {name:"Chad",flag:"🇹🇩",dial:"+235"},
+        {name:"Chile",flag:"🇨🇱",dial:"+56"},
+        {name:"China",flag:"🇨🇳",dial:"+86"},
+        {name:"Colombia",flag:"🇨🇴",dial:"+57"},
+        {name:"Comoros",flag:"🇰🇲",dial:"+269"},
+        {name:"Congo",flag:"🇨🇬",dial:"+242"},
+        {name:"Costa Rica",flag:"🇨🇷",dial:"+506"},
+        {name:"Croatia",flag:"🇭🇷",dial:"+385"},
+        {name:"Cuba",flag:"🇨🇺",dial:"+53"},
+        {name:"Cyprus",flag:"🇨🇾",dial:"+357"},
+        {name:"Czechia",flag:"🇨🇿",dial:"+420"},
+        {name:"Denmark",flag:"🇩🇰",dial:"+45"},
+        {name:"Djibouti",flag:"🇩🇯",dial:"+253"},
+        {name:"Dominica",flag:"🇩🇲",dial:"+1-767"},
+        {name:"Dominican Republic",flag:"🇩🇴",dial:"+1-809"},
+        {name:"Ecuador",flag:"🇪🇨",dial:"+593"},
+        {name:"Egypt",flag:"🇪🇬",dial:"+20"},
+        {name:"El Salvador",flag:"🇸🇻",dial:"+503"},
+        {name:"Equatorial Guinea",flag:"🇬🇶",dial:"+240"},
+        {name:"Eritrea",flag:"🇪🇷",dial:"+291"},
+        {name:"Estonia",flag:"🇪🇪",dial:"+372"},
+        {name:"Eswatini",flag:"🇸🇿",dial:"+268"},
+        {name:"Ethiopia",flag:"🇪🇹",dial:"+251"},
+        {name:"Fiji",flag:"🇫🇯",dial:"+679"},
+        {name:"Finland",flag:"🇫🇮",dial:"+358"},
+        {name:"France",flag:"🇫🇷",dial:"+33"},
+        {name:"Gabon",flag:"🇬🇦",dial:"+241"},
+        {name:"Gambia",flag:"🇬🇲",dial:"+220"},
+        {name:"Georgia",flag:"🇬🇪",dial:"+995"},
+        {name:"Germany",flag:"🇩🇪",dial:"+49"},
+        {name:"Ghana",flag:"🇬🇭",dial:"+233"},
+        {name:"Greece",flag:"🇬🇷",dial:"+30"},
+        {name:"Grenada",flag:"🇬🇩",dial:"+1-473"},
+        {name:"Guatemala",flag:"🇬🇹",dial:"+502"},
+        {name:"Guinea",flag:"🇬🇳",dial:"+224"},
+        {name:"Guinea-Bissau",flag:"🇬🇼",dial:"+245"},
+        {name:"Guyana",flag:"🇬🇾",dial:"+592"},
+        {name:"Haiti",flag:"🇭🇹",dial:"+509"},
+        {name:"Honduras",flag:"🇭🇳",dial:"+504"},
+        {name:"Hungary",flag:"🇭🇺",dial:"+36"},
+        {name:"Iceland",flag:"🇮🇸",dial:"+354"},
+        {name:"Indonesia",flag:"🇮🇩",dial:"+62"},
+        {name:"Iran",flag:"🇮🇷",dial:"+98"},
+        {name:"Iraq",flag:"🇮🇶",dial:"+964"},
+        {name:"Ireland",flag:"🇮🇪",dial:"+353"},
+        {name:"Israel",flag:"🇮🇱",dial:"+972"},
+        {name:"Italy",flag:"🇮🇹",dial:"+39"},
+        {name:"Jamaica",flag:"🇯🇲",dial:"+1-876"},
+        {name:"Japan",flag:"🇯🇵",dial:"+81"},
+        {name:"Jordan",flag:"🇯🇴",dial:"+962"},
+        {name:"Kazakhstan",flag:"🇰🇿",dial:"+7"},
+        {name:"Kenya",flag:"🇰🇪",dial:"+254"},
+        {name:"Kiribati",flag:"🇰🇮",dial:"+686"},
+        {name:"Kuwait",flag:"🇰🇼",dial:"+965"},
+        {name:"Kyrgyzstan",flag:"🇰🇬",dial:"+996"},
+        {name:"Laos",flag:"🇱🇦",dial:"+856"},
+        {name:"Latvia",flag:"🇱🇻",dial:"+371"},
+        {name:"Lebanon",flag:"🇱🇧",dial:"+961"},
+        {name:"Lesotho",flag:"🇱🇸",dial:"+266"},
+        {name:"Liberia",flag:"🇱🇷",dial:"+231"},
+        {name:"Libya",flag:"🇱🇾",dial:"+218"},
+        {name:"Liechtenstein",flag:"🇱🇮",dial:"+423"},
+        {name:"Lithuania",flag:"🇱🇹",dial:"+370"},
+        {name:"Luxembourg",flag:"🇱🇺",dial:"+352"},
+        {name:"Madagascar",flag:"🇲🇬",dial:"+261"},
+        {name:"Malawi",flag:"🇲🇼",dial:"+265"},
+        {name:"Malaysia",flag:"🇲🇾",dial:"+60"},
+        {name:"Maldives",flag:"🇲🇻",dial:"+960"},
+        {name:"Mali",flag:"🇲🇱",dial:"+223"},
+        {name:"Malta",flag:"🇲🇹",dial:"+356"},
+        {name:"Marshall Islands",flag:"🇲🇭",dial:"+692"},
+        {name:"Mauritania",flag:"🇲🇷",dial:"+222"},
+        {name:"Mauritius",flag:"🇲🇺",dial:"+230"},
+        {name:"Mexico",flag:"🇲🇽",dial:"+52"},
+        {name:"Micronesia",flag:"🇫🇲",dial:"+691"},
+        {name:"Moldova",flag:"🇲🇩",dial:"+373"},
+        {name:"Monaco",flag:"🇲🇨",dial:"+377"},
+        {name:"Mongolia",flag:"🇲🇳",dial:"+976"},
+        {name:"Montenegro",flag:"🇲🇪",dial:"+382"},
+        {name:"Morocco",flag:"🇲🇦",dial:"+212"},
+        {name:"Mozambique",flag:"🇲🇿",dial:"+258"},
+        {name:"Myanmar",flag:"🇲🇲",dial:"+95"},
+        {name:"Namibia",flag:"🇳🇦",dial:"+264"},
+        {name:"Nauru",flag:"🇳🇷",dial:"+674"},
+        {name:"Nepal",flag:"🇳🇵",dial:"+977"},
+        {name:"Netherlands",flag:"🇳🇱",dial:"+31"},
+        {name:"New Zealand",flag:"🇳🇿",dial:"+64"},
+        {name:"Nicaragua",flag:"🇳🇮",dial:"+505"},
+        {name:"Niger",flag:"🇳🇪",dial:"+227"},
+        {name:"Nigeria",flag:"🇳🇬",dial:"+234"},
+        {name:"North Korea",flag:"🇰🇵",dial:"+850"},
+        {name:"North Macedonia",flag:"🇲🇰",dial:"+389"},
+        {name:"Norway",flag:"🇳🇴",dial:"+47"},
+        {name:"Oman",flag:"🇴🇲",dial:"+968"},
+        {name:"Pakistan",flag:"🇵🇰",dial:"+92"},
+        {name:"Palau",flag:"🇵🇼",dial:"+680"},
+        {name:"Palestine",flag:"🇵🇸",dial:"+970"},
+        {name:"Panama",flag:"🇵🇦",dial:"+507"},
+        {name:"Papua New Guinea",flag:"🇵🇬",dial:"+675"},
+        {name:"Paraguay",flag:"🇵🇾",dial:"+595"},
+        {name:"Peru",flag:"🇵🇪",dial:"+51"},
+        {name:"Philippines",flag:"🇵🇭",dial:"+63"},
+        {name:"Poland",flag:"🇵🇱",dial:"+48"},
+        {name:"Portugal",flag:"🇵🇹",dial:"+351"},
+        {name:"Qatar",flag:"🇶🇦",dial:"+974"},
+        {name:"Romania",flag:"🇷🇴",dial:"+40"},
+        {name:"Russia",flag:"🇷🇺",dial:"+7"},
+        {name:"Rwanda",flag:"🇷🇼",dial:"+250"},
+        {name:"Saint Kitts and Nevis",flag:"🇰🇳",dial:"+1-869"},
+        {name:"Saint Lucia",flag:"🇱🇨",dial:"+1-758"},
+        {name:"Saint Vincent",flag:"🇻🇨",dial:"+1-784"},
+        {name:"Samoa",flag:"🇼🇸",dial:"+685"},
+        {name:"San Marino",flag:"🇸🇲",dial:"+378"},
+        {name:"Sao Tome and Principe",flag:"🇸🇹",dial:"+239"},
+        {name:"Saudi Arabia",flag:"🇸🇦",dial:"+966"},
+        {name:"Senegal",flag:"🇸🇳",dial:"+221"},
+        {name:"Serbia",flag:"🇷🇸",dial:"+381"},
+        {name:"Seychelles",flag:"🇸🇨",dial:"+248"},
+        {name:"Sierra Leone",flag:"🇸🇱",dial:"+232"},
+        {name:"Singapore",flag:"🇸🇬",dial:"+65"},
+        {name:"Slovakia",flag:"🇸🇰",dial:"+421"},
+        {name:"Slovenia",flag:"🇸🇮",dial:"+386"},
+        {name:"Solomon Islands",flag:"🇸🇧",dial:"+677"},
+        {name:"Somalia",flag:"🇸🇴",dial:"+252"},
+        {name:"South Africa",flag:"🇿🇦",dial:"+27"},
+        {name:"South Korea",flag:"🇰🇷",dial:"+82"},
+        {name:"South Sudan",flag:"🇸🇸",dial:"+211"},
+        {name:"Spain",flag:"🇪🇸",dial:"+34"},
+        {name:"Sri Lanka",flag:"🇱🇰",dial:"+94"},
+        {name:"Sudan",flag:"🇸🇩",dial:"+249"},
+        {name:"Suriname",flag:"🇸🇷",dial:"+597"},
+        {name:"Sweden",flag:"🇸🇪",dial:"+46"},
+        {name:"Switzerland",flag:"🇨🇭",dial:"+41"},
+        {name:"Syria",flag:"🇸🇾",dial:"+963"},
+        {name:"Taiwan",flag:"🇹🇼",dial:"+886"},
+        {name:"Tajikistan",flag:"🇹🇯",dial:"+992"},
+        {name:"Tanzania",flag:"🇹🇿",dial:"+255"},
+        {name:"Thailand",flag:"🇹🇭",dial:"+66"},
+        {name:"Timor-Leste",flag:"🇹🇱",dial:"+670"},
+        {name:"Togo",flag:"🇹🇬",dial:"+228"},
+        {name:"Tonga",flag:"🇹🇴",dial:"+676"},
+        {name:"Trinidad and Tobago",flag:"🇹🇹",dial:"+1-868"},
+        {name:"Tunisia",flag:"🇹🇳",dial:"+216"},
+        {name:"Turkey",flag:"🇹🇷",dial:"+90"},
+        {name:"Turkmenistan",flag:"🇹🇲",dial:"+993"},
+        {name:"Tuvalu",flag:"🇹🇻",dial:"+688"},
+        {name:"Uganda",flag:"🇺🇬",dial:"+256"},
+        {name:"Ukraine",flag:"🇺🇦",dial:"+380"},
+        {name:"United Arab Emirates",flag:"🇦🇪",dial:"+971"},
+        {name:"United Kingdom",flag:"🇬🇧",dial:"+44"},
+        {name:"United States",flag:"🇺🇸",dial:"+1"},
+        {name:"Uruguay",flag:"🇺🇾",dial:"+598"},
+        {name:"Uzbekistan",flag:"🇺🇿",dial:"+998"},
+        {name:"Vanuatu",flag:"🇻🇺",dial:"+678"},
+        {name:"Vatican City",flag:"🇻🇦",dial:"+39"},
+        {name:"Venezuela",flag:"🇻🇪",dial:"+58"},
+        {name:"Vietnam",flag:"🇻🇳",dial:"+84"},
+        {name:"Yemen",flag:"🇾🇪",dial:"+967"},
+        {name:"Zambia",flag:"🇿🇲",dial:"+260"},
+        {name:"Zimbabwe",flag:"🇿🇼",dial:"+263"},
+    ];
+
+    // ─── Render lists ───
+    function renderCodeList(prefix, items) {
+        const list = document.getElementById(prefix + 'CodeList');
+        if (!list) return;
+        list.innerHTML = '';
+        items.forEach(c => {
+            const d = document.createElement('div');
+            d.className = 'code-item';
+            d.innerHTML = `<span class="flag">${c.flag}</span><span class="name">${c.name}</span><span class="dial">${c.dial}</span>`;
+            d.onclick = () => selectCode(prefix, c);
+            list.appendChild(d);
+        });
+    }
+
+    function renderCountryList(prefix, items) {
+        const list = document.getElementById(prefix + 'CountryList');
+        const selected = document.getElementById(prefix + 'Country')?.value || '';
+        if (!list) return;
+        list.innerHTML = '';
+        items.forEach(c => {
+            const d = document.createElement('div');
+            d.className = 'country-item' + (c.name === selected ? ' selected' : '');
+            d.textContent = c.name;
+            d.onclick = () => selectCountry(prefix, c.name);
+            list.appendChild(d);
+        });
+    }
+
+    // ─── Dropdown toggles ───
+    function toggleCodeDropdown(prefix) {
+        const dropdown = document.getElementById(prefix + 'CodeDropdown');
+        const btn = document.getElementById(prefix + 'PhoneCodeBtn');
+        if (!dropdown) return;
+        const isOpen = dropdown.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) {
+            dropdown.classList.add('open');
+            btn.classList.add('open');
+            renderCodeList(prefix, COUNTRIES);
+            setTimeout(() => document.getElementById(prefix + 'CodeSearch')?.focus(), 50);
+        }
+    }
+
+    function toggleCountryDropdown(prefix) {
+        const dropdown = document.getElementById(prefix + 'CountryDropdown');
+        const btn = document.getElementById(prefix + 'CountryBtn');
+        if (!dropdown) return;
+        const isOpen = dropdown.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) {
+            dropdown.classList.add('open');
+            btn.classList.add('open');
+            btn.querySelector('.caret')?.classList.add('open');
+            renderCountryList(prefix, COUNTRIES);
+            setTimeout(() => document.getElementById(prefix + 'CountrySearch')?.focus(), 50);
+        }
+    }
+
+    function closeAllDropdowns() {
+        document.querySelectorAll('.code-dropdown, .country-dropdown').forEach(d => d.classList.remove('open'));
+        document.querySelectorAll('.phone-code-btn').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.country-btn').forEach(b => {
+            b.classList.remove('open');
+            b.querySelector('.caret')?.classList.remove('open');
+        });
+    }
+
+    // ─── Selection handlers ───
+    function selectCode(prefix, country) {
+        document.getElementById(prefix + 'PhoneFlag').textContent = country.flag;
+        document.getElementById(prefix + 'PhoneDial').textContent = country.dial;
+        document.getElementById(prefix + 'PhoneCode').value = country.dial;
+        closeAllDropdowns();
+    }
+
+    function selectCountry(prefix, name) {
+        document.getElementById(prefix + 'Country').value = name;
+        const btn = document.getElementById(prefix + 'CountryBtn');
+        const textEl = document.getElementById(prefix + 'CountryBtnText');
+        if (textEl) {
+            textEl.textContent = name;
+            textEl.classList.remove('placeholder');
+        }
+        closeAllDropdowns();
+    }
+
+    // ─── Filter functions ───
+    function filterCodeList(prefix, query) {
+        const q = query.toLowerCase();
+        const filtered = COUNTRIES.filter(c =>
+            c.name.toLowerCase().includes(q) || c.dial.includes(q)
+        );
+        renderCodeList(prefix, filtered);
+    }
+
+    function filterCountryList(prefix, query) {
+        const q = query.toLowerCase();
+        const filtered = COUNTRIES.filter(c => c.name.toLowerCase().includes(q));
+        renderCountryList(prefix, filtered);
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.phone-code-btn') &&
+            !e.target.closest('.code-dropdown') &&
+            !e.target.closest('.country-btn') &&
+            !e.target.closest('.country-dropdown')) {
+            closeAllDropdowns();
+        }
+    });
+
+    // ─── Typewriter tagline ───
+    (function(){
+        const el = document.getElementById('tagline');
+        if (!el) return;
+        const phrases = [
+            'Secure file sharing, simplified.',
+            'Your data, your control.',
+            'Encrypted. Fast. Reliable.',
+            'Share with confidence.'
+        ];
+        let idx = 0;
+        function type(text, i, cb) {
+            if (i < text.length) {
+                el.textContent = text.slice(0, i+1);
+                setTimeout(() => type(text, i+1, cb), 48);
+            } else setTimeout(cb, 2800);
+        }
+        function erase(text, i, cb) {
+            if (i > 0) {
+                el.textContent = text.slice(0, i-1);
+                setTimeout(() => erase(text, i-1, cb), 28);
+            } else cb();
+        }
+        function cycle() {
+            type(phrases[idx], 0, () =>
+                erase(phrases[idx], phrases[idx].length, () => {
+                    idx = (idx+1) % phrases.length;
+                    cycle();
+                })
+            );
+        }
+        setTimeout(cycle, 3500);
+    })();
+    </script>
+</body>
+</html>

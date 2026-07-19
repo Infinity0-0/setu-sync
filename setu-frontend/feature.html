@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setu — Features</title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossOrigin="use-credentials">
+<meta property="og:type" content="website">
+<!-- X / Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://setusync.space/feature.html">
+<meta name="twitter:title" content="सेतु-Connect | Real-Time Collaboration & File Sharing">
+<meta name="twitter:description" content="Setu is a secure platform for real-time collaboration, peer-to-peer file sharing, messaging, and instant room creation directly in your browser.">
+<meta name="twitter:image" content="https://setusync.space/favicons/logo1.webp">
+
+    
+ <!-- Meta tag -->
+    <title>Setu Features: Chat, Whiteboard, QR File Sharing, Rooms</title>
+    <meta name="description" content="Discover Setu's powerful collaboration tools, including secure file sharing, QR transfers, live chat, shared whiteboards, instant rooms, and seamless teamwork.">
+    <meta name="keywords" content="Setu, setu_connect, setu feature file sharing, setusync features,">
+    <meta name="author" content="Aham">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://setusync.space/feature.html">
+    <meta property="og:image" content="https://setusync.space/favicons/logo1.webp">
+    <meta property="og:title" content="Setu Features">
+    <meta property="og:description" content="Explore Setu's secure file sharing, QR transfers, live chat, collaborative whiteboards, and real-time teamwork.">
+    <meta property="og:url" content="https://setusync.space/feature.html">
+    <meta property="og:site_name" content="सेतु-Connect with the world">
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTBK6R5TDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZTBK6R5TDX');
+    </script>
+
+
+<meta name="theme-color" content="#1C1A29">
+<style>
+  :root {
+    --bg: #1C1A29;
+    --bg-2: #252238;
+    --bg-3: #2D2A45;
+    --surface: rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.09);
+    --border-2: rgba(255,255,255,0.14);
+    --text: #F5F5F7;
+    --slate: #A0A0B8;
+    --slate-2: #7A7A92;
+    --indigo: #6C7CF0;
+    --indigo-2: #8B9CF7;
+    --teal: #2DD4BF;
+    --amber: #F2A93B;
+    --rose: #F472B6;
+    --green: #34D399;
+    --red: #F87171;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 10px 40px rgba(0,0,0,0.35);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  [data-theme="light"] {
+    --bg: #F7F7FB;
+    --bg-2: #FFFFFF;
+    --bg-3: #F0F0F6;
+    --surface: rgba(0,0,0,0.03);
+    --surface-2: rgba(0,0,0,0.06);
+    --border: rgba(0,0,0,0.08);
+    --border-2: rgba(0,0,0,0.14);
+    --text: #1C1A29;
+    --slate: #5A5A72;
+    --slate-2: #8A8AA0;
+    --shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== NAVBAR ===== */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 20px; letter-spacing: -0.5px;
+  }
+  .nav-logo {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: whitesmoke;
+
+    
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--slate); font-size: 14px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--text); }
+  .nav-cta {
+    padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-2));
+    color: #fff; border: none; cursor: pointer; transition: transform .2s, box-shadow .2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(108,124,240,0.4); }
+  .theme-btn {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 16px;
+    display: grid; place-items: center; transition: background .2s;
+  }
+  .theme-btn:hover { background: var(--surface-2); }
+  @media (max-width: 768px) { .nav-links { display: none; } }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 90px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(600px circle at 20% 20%, rgba(108,124,240,0.18), transparent 50%),
+      radial-gradient(600px circle at 80% 30%, rgba(45,212,191,0.15), transparent 50%),
+      radial-gradient(800px circle at 50% 90%, rgba(244,114,182,0.10), transparent 50%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    background: var(--surface); border: 1px solid var(--border); color: var(--slate);
+    margin-bottom: 28px;
+  }
+  .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 68px); font-weight: 800; letter-spacing: -2px;
+    line-height: 1.05; margin-bottom: 22px;
+    background: linear-gradient(135deg, var(--text) 30%, var(--indigo-2) 70%, var(--teal));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 20px); color: var(--slate); max-width: 640px; margin: 0 auto 36px;
+  }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary, .btn-ghost {
+    padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer;
+    border: none; transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--indigo), var(--indigo-2)); color: #fff;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108,124,240,0.45); }
+  .btn-ghost {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  }
+  .btn-ghost:hover { background: var(--surface-2); }
+
+  /* ===== STATS ===== */
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 24px 80px;
+  }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px 24px; text-align: center;
+  }
+  .stat-num { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+  .stat-num.indigo { color: var(--indigo-2); }
+  .stat-num.teal { color: var(--teal); }
+  .stat-num.amber { color: var(--amber); }
+  .stat-num.rose { color: var(--rose); }
+  .stat-label { color: var(--slate); font-size: 13px; margin-top: 6px; }
+
+  /* ===== SECTION ===== */
+  .section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-tag {
+    display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--indigo-2);
+    background: rgba(108,124,240,0.12); border: 1px solid rgba(108,124,240,0.25); margin-bottom: 16px;
+  }
+  .section h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+  .section-sub { color: var(--slate); font-size: 17px; max-width: 600px; margin: 0 auto; }
+
+  /* ===== FEATURE GRID ===== */
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 32px 28px; transition: transform .25s, border-color .25s, background .25s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--border-2); background: var(--surface-2); }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--indigo), var(--teal)); opacity: 0; transition: opacity .25s;
+  }
+  .card:hover::before { opacity: 1; }
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+    font-size: 26px; margin-bottom: 20px;
+    background: var(--surface-2); border: 1px solid var(--border);
+  }
+  .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .card p { color: var(--slate); font-size: 15px; line-height: 1.65; }
+  .card ul { list-style: none; margin-top: 14px; }
+  .card ul li {
+    font-size: 14px; color: var(--slate); padding: 6px 0 6px 24px; position: relative;
+  }
+  .card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 6px; color: var(--teal); font-weight: 700;
+  }
+
+  /* ===== BIG FEATURE BLOCK ===== */
+  .feature-block {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    margin-bottom: 80px;
+  }
+  .feature-block:nth-child(even) .feature-visual { order: 2; }
+  @media (max-width: 860px) {
+    .feature-block { grid-template-columns: 1fr; }
+    .feature-block:nth-child(even) .feature-visual { order: 0; }
+  }
+  .feature-text h3 { font-size: 28px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .feature-text p { color: var(--slate); font-size: 16px; margin-bottom: 20px; }
+  .feature-text ul { list-style: none; }
+  .feature-text ul li {
+    padding: 10px 0 10px 32px; position: relative; color: var(--text); font-size: 15px;
+  }
+  .feature-text ul li::before {
+    content: ''; position: absolute; left: 0; top: 14px; width: 18px; height: 18px;
+    border-radius: 50%; background: rgba(45,212,191,0.15); border: 2px solid var(--teal);
+  }
+  .feature-text ul li::after {
+    content: ''; position: absolute; left: 6px; top: 19px; width: 6px; height: 3px;
+    border-left: 2px solid var(--teal); border-bottom: 2px solid var(--teal); transform: rotate(-45deg);
+  }
+  .feature-visual {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 32px; min-height: 320px; display: flex; flex-direction: column; gap: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  /* Mock chat UI */
+  .mock-chat { display: flex; flex-direction: column; gap: 12px; }
+  .mock-msg { display: flex; gap: 10px; align-items: flex-start; max-width: 80%; }
+  .mock-msg.own { align-self: flex-end; flex-direction: row-reverse; }
+  .mock-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo), var(--teal)); flex-shrink: 0; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 13px; }
+  .mock-bubble { background: var(--bg-3); padding: 10px 14px; border-radius: 14px; font-size: 14px; }
+  .mock-msg.own .mock-bubble { background: linear-gradient(135deg, var(--indigo), var(--indigo-2)); color: #fff; }
+  .mock-reply {
+    background: var(--surface-2); border-left: 3px solid var(--indigo); padding: 6px 10px;
+    border-radius: 6px; font-size: 12px; color: var(--slate); margin-bottom: 6px;
+  }
+
+  /* Mock file share */
+  .mock-file {
+    display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+    background: var(--bg-3); border-radius: 12px; border: 1px solid var(--border);
+  }
+  .mock-file-ic { width: 40px; height: 40px; border-radius: 10px; background: rgba(108,124,240,0.15); display: grid; place-items: center; font-size: 20px; }
+  .mock-file-info { flex: 1; }
+  .mock-file-name { font-size: 14px; font-weight: 600; }
+  .mock-file-meta { font-size: 12px; color: var(--slate); }
+
+  /* Mock whiteboard */
+  .mock-wb {
+    flex: 1; min-height: 220px; background: var(--bg-3); border-radius: 12px;
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .mock-wb svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* Mock QR */
+  .mock-qr {
+    width: 160px; height: 160px; margin: 0 auto; background: #fff; border-radius: 12px;
+    padding: 10px; display: grid; place-items: center;
+  }
+  .mock-qr-grid {
+    width: 100%; height: 100%; display: grid; grid-template-columns: repeat(15, 1fr); gap: 1px;
+  }
+  .mock-qr-grid span { background: #1C1A29; border-radius: 1px; }
+  .mock-qr-grid span.off { background: transparent; }
+
+  /* ===== CTA ===== */
+  .cta {
+    margin: 80px 24px; max-width: 1100px; margin-left: auto; margin-right: auto;
+    background: linear-gradient(135deg, rgba(108,124,240,0.15), rgba(45,212,191,0.10));
+    border: 1px solid var(--border-2); border-radius: 24px; padding: 64px 40px; text-align: center;
+  }
+  .cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; }
+  .cta p { color: var(--slate); font-size: 17px; margin-bottom: 32px; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; color: var(--slate-2); font-size: 14px;
+  }
+  .footer a { color: var(--slate); }
+  .footer a:hover { color: var(--text); }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; }
+  .reveal.in { animation: fadeUp .6s ease forwards; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="feature.html" class="nav-brand">
+    <div class="nav-logo"><img src="favicons/logo1.webp" alt=""></div>
+    Setu
+  </a>
+  <div class="nav-links">
+    <a href="#chat">Chat</a>
+    <a href="#files">File Sharing</a>
+    <a href="#whiteboard">Whiteboard</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#qr-transfer">QR Transfer</a>
+    <a href="#security">Security</a>
+  </div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <button class="theme-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    <a href="index.html"><button class="nav-cta">Open App →</button></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge"><span class="dot"></span> ☀️</div>
+  <h1>Setu is a way to work together<br>in real time</h1>
+  <p>Setu is a platform that lets you collaborate in real time with secure messaging, peer-to-peer file sharing, a shared whiteboard and instant room creation. All in your browser.</p>
+  <div class="hero-btns">
+    <a href="setu.html"><button class="btn-primary">Launch Setu →</button></a>
+    <a href="#features"><button class="btn-ghost">Explore Features</button></a>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><div class="stat-num indigo">8-char</div><div class="stat-label">Instant Room Codes</div></div>
+  <div class="stat"><div class="stat-num teal">P2P</div><div class="stat-label">Direct File Transfer</div></div>
+  <div class="stat"><div class="stat-num amber">E2E</div><div class="stat-label">Encrypted Messaging</div></div>
+  <div class="stat"><div class="stat-num rose">∞</div><div class="stat-label">Collaborative Canvas</div></div>
+</section>
+
+<!-- FEATURE GRID -->
+<section class="section" id="features">
+  <div class="section-head">
+    <span class="section-tag">Core Features</span>
+    <h2>Setu has some cool features</h2>
+    <p class="section-sub">Setu is built for collaboration. It has everything you need to communicate in real time. Chat, share, draw and connect without leaving your browser.</p>
+  </div>
+  <div class="grid">
+    <div class="card reveal">
+      <div class="card-icon">💬</div>
+      <h3>Real-Time Chat</h3>
+      <p>You can have conversations with people in real time. It is like messaging. Better.</p>
+      <ul>
+        <li>Reply to specific messages</li>
+        <li>Edit and unsend your messages</li>
+        <li>Right-click or long-press menu</li>
+        <li>Message highlighting and scroll</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📁</div>
+      <h3>File & Folder Sharing</h3>
+      <p>You can share files and folders with people directly. No need to store them on a server or worry about limits.</p>
+      <ul>
+        <li>Drag and drop or browse</li>
+        <li>Send to everyone or specific users</li>
+        <li>Track pending, received and shared</li>
+        <li>Download with one click</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🎨</div>
+      <h3>Collaborative Whiteboard</h3>
+      <p>Setu has a shared whiteboard that you can use to brainstorm, sketch and diagram with others. It is like a canvas that everyone can use at the same time.</p>
+      <ul>
+        <li>Real-time multi-user drawing</li>
+        <li>Synced scene across room</li>
+        <li>Clear canvas for everyone</li>
+        <li>Hand-drawn aesthetic</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔗</div>
+      <h3>Instant Rooms</h3>
+      <p>You can join a room in seconds with a special code, QR code or link. It is easy to join a room and start collaborating with others.</p>
+      <ul>
+        <li>QR code for join</li>
+        <li>Copy code or link</li>
+        <li>Auto-reconnect on refresh</li>
+        <li>Leave room anytime</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👥</div>
+      <h3>Member Management</h3>
+      <p>You can see who is online, manage who gets your messages and files and control who is in your room. It is easy to manage your room.</p>
+      <ul>
+        <li>Live member list</li>
+        <li>Select specific recipients</li>
+        <li>Edit your nickname</li>
+        <li>Profile sidebar with details</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔐</div>
+      <h3>Secure & Private</h3>
+      <p>Setu uses tokens and encryption to keep your conversations and files safe. You can trust that your information is secure when you use Setu.</p>
+      <ul>
+        <li>JWT auth with Appwrite</li>
+        <li>Encrypted message transit</li>
+        <li>Session-based tracking</li>
+        <li>Secure WebSocket connection</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📱</div>
+      <h3>Mobile Friendly</h3>
+      <p>Setu works great on phones, tablets and desktops. You can use it anywhere. It will look and work great.</p>
+      <ul>
+        <li>Adaptive sidebar drawer</li>
+        <li>Touch-optimized controls</li>
+        <li>Long-press context menus</li>
+        <li>PWA installable</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🌗</div>
+      <h3>Dark & Light Themes</h3>
+      <p>Setu has two themes. You can choose the one that you like best. It will make using Setu more comfortable.</p>
+      <ul>
+        <li>One-click theme toggle</li>
+        <li>Consistent design tokens</li>
+        <li>Smooth transitions</li>
+        <li>Eye-friendly colors</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚡</div>
+      <h3>Live Status & Reconnect</h3>
+      <p>Setu will always try to keep you connected. If you get disconnected it will automatically try to reconnect you.</p>
+      <ul>
+        <li>WebSocket indicator</li>
+        <li>Auto-reconnect on drop</li>
+        <li>Saved room state</li>
+        <li>Connection status badge</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📱</div>
+      <h3>QR File Transfer</h3>
+      <p>You can share files with others using a QR code. It is easy and secure.</p>
+      <ul>
+        <li>Generate QR code for any file</li>
+        <li>Share via WhatsApp and Email</li>
+        <li>One-time download option</li>
+        <li>Auto-delete after 7 minutes</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔒</div>
+      <h3>Password Protection</h3>
+      <p>You can add a password to your file transfers for security. This will keep your files safe and secure.</p>
+      <ul>
+        <li>Optional password on uploads</li>
+        <li>Password-verified downloads</li>
+        <li>Secure ticket-based access</li>
+        <li>One-time downloads</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🗂️</div>
+      <h3>Transfer History</h3>
+      <p>You can see all of your file transfers on Setu. This will help you keep track of what you have shared and with whom.</p>
+      <ul>
+        <li>Upload history with codes</li>
+        <li>Password and one-time badges</li>
+        <li>Delete history entries</li>
+        <li>Quick re-download access</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED FEATURE BLOCKS -->
+<section class="section" id="chat">
+  <div class="section-head">
+    <span class="section-tag">Messaging</span>
+    <h2>Setu has a messaging system</h2>
+    <p class="section-sub">Reply threads, edit history, unsend and smart context menus. Everything you expect from a messenger. You can reply to messages, edit them and even unsend them.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Reply, Edit & Unsend</h3>
+      <p>You can have conversations with others in real time. Messaging on Setu is easy and convenient.</p>
+      <ul>
+        <li>Reply to any message with a quoted preview</li>
+        <li>Click a reply to scroll and highlight the original</li>
+        <li>Edit messages inline with a live textarea</li>
+        <li>Unsend removes it for everyone in the room</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-chat">
+        <div class="mock-msg">
+          <div class="mock-avatar">A</div>
+          <div class="mock-bubble">
+            <div class="mock-reply">↪ You · Hey team, ready to start?</div>
+            Yes! Just finishing up the wireframes 🎨
+          </div>
+        </div>
+        <div class="mock-msg own">
+          <div class="mock-avatar">Y</div>
+          <div class="mock-bubble">Awesome, sharing them now <span style="opacity:.7;font-size:11px;">(edited)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Context Quick Actions</h3>
+      <p>You can right-click on desktop or long-press on mobile to reveal a context menu. This will give you options to reply, edit and unsend messages.</p>
+      <ul>
+        <li>Right-click context menu (desktop)</li>
+        <li>Long-press menu (mobile)</li>
+        <li>Hover reply button on every message</li>
+        <li>Smart positioning to stay on-screen</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:center; flex:1;">
+        <div style="background:var(--bg-3); border:1px solid var(--border-2); border-radius:10px; padding:8px; width:200px; box-shadow:var(--shadow);">
+          <div style="padding:10px 14px; font-size:14px; cursor:pointer; border-radius:6px; display:flex; align-items:center; gap:10px;">↩ <span>Reply</span></div>
+          <div style="height:1px; background:var(--border); margin:4px 0;"></div>
+          <div style="padding:10px 14px; font-size:14px; cursor:pointer; border-radius:6px; display:flex; align-items:center; gap:10px;">✏️ <span>Edit</span></div>
+          <div style="height:1px; background:var(--border); margin:4px 0;"></div>
+          <div style="padding:10px 14px; font-size:14px; cursor:pointer; border-radius:6px; color:var(--red); display:flex; align-items:center; gap:10px;">🗑️ <span>Unsend</span></div>
+        </div>
+        <p style="color:var(--slate); font-size:13px;">Right-click or long-press any message</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILE SHARING -->
+<section class="section" id="files">
+  <div class="section-head">
+    <span class="section-tag">File Sharing</span>
+    <h2>You can share files and folders with others on Setu</h2>
+    <p class="section-sub">No need to store them on a server or worry about limits. You can send files peer-to-peer and control who gets them.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Drag, Drop, Send</h3>
+      <p>Drop files or entire folders onto the upload zone, or browse manually. Files are queued and ready to send with a single click.</p>
+      <ul>
+        <li>Drag and drop or browse</li>
+        <li>Send to everyone or specific users</li>
+        <li>Track pending, received and shared</li>
+        <li>Download with one click</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="border:2px dashed var(--border-2); border-radius:12px; padding:28px; text-align:center; color:var(--slate);">
+        <div style="font-size:36px; margin-bottom:8px;">⬆</div>
+        <p style="font-size:14px;">Drop files / folders here, or</p>
+        <p style="font-size:13px; margin-top:4px;"><span style="color:var(--indigo-2); font-weight:600;">Browse Files</span> • <span style="color:var(--indigo-2); font-weight:600;">Browse Folders</span></p>
+      </div>
+      <div class="mock-file">
+        <div class="mock-file-ic">📄</div>
+        <div class="mock-file-info">
+          <div class="mock-file-name">project-wireframes.pdf</div>
+          <div class="mock-file-meta">2.4 MB • Ready to send</div>
+        </div>
+      </div>
+      <div class="mock-file">
+        <div class="mock-file-ic">🖼️</div>
+        <div class="mock-file-info">
+          <div class="mock-file-name">hero-banner.png</div>
+          <div class="mock-file-meta">845 KB • Ready to send</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Choose Your Recipients</h3>
+      <p>Send to everyone in the room or pick members from a dropdown. Recipient tags show exactly who will receive your files.</p>
+      <ul>
+        <li>Send to "Everyone" or specific members</li>
+        <li>Multi-select recipient dropdown</li>
+        <li>Visual recipient tags with remove option</li>
+        <li>Track Pending, Received & Shared tabs</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:12px 14px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="background:rgba(108,124,240,0.2); color:var(--indigo-2); padding:4px 12px; border-radius:999px; font-size:13px; font-weight:600;">Everyone</span>
+          <span style="color:var(--slate); font-size:13px;">▾</span>
+        </div>
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:8px;">
+          <div style="padding:10px 12px; display:flex; align-items:center; gap:10px; font-size:14px;"><input type="checkbox" checked> Everyone</div>
+          <div style="padding:10px 12px; display:flex; align-items:center; gap:10px; font-size:14px; color:var(--slate);"><input type="checkbox"> Aarav</div>
+          <div style="padding:10px 12px; display:flex; align-items:center; gap:10px; font-size:14px; color:var(--slate);"><input type="checkbox"> Diya</div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:rgba(45,212,191,0.15); color:var(--teal); font-weight:600;">Pending (2)</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:var(--surface-2); color:var(--slate);">Received (5)</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:var(--surface-2); color:var(--slate);">Shared (3)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHITEBOARD -->
+<section class="section" id="whiteboard">
+  <div class="section-head">
+    <span class="section-tag">Collaboration</span>
+    <h2>Setu has a shared canvas for ideas</h2>
+    <p class="section-sub">You can brainstorm, sketch and diagram together on a real-time whiteboard.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Real-Time Whiteboard</h3>
+      <p>You can open the whiteboard with the + button. Start drawing. Every stroke syncs to all room members instantly. Clear the canvas for everyone with one action.</p>
+      <ul>
+        <li>Excalidraw-powered hand-drawn canvas</li>
+        <li>Live scene sync via WebSocket</li>
+        <li>Clear canvas broadcasts to all members</li>
+        <li>Seamless integration</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-wb">
+        <svg viewBox="0 0 300 220" preserveAspectRatio="none">
+          <rect x="40" y="40" width="80" height="50" rx="6" fill="none" stroke="#6C7CF0" stroke-width="2"/>
+          <text x="80" y="70" text-anchor="middle" fill="#F5F5F7" font-size="12" font-family="sans-serif">Login</text>
+          <line x1="120" y1="65" x2="180" y2="65" stroke="#2DD4BF" stroke-width="2" marker-end="url(#arrow)"/>
+          <rect x="180" y="40" width="80" height="50" rx="6" fill="none" stroke="#2DD4BF" stroke-width="2"/>
+          <text x="220" y="70" text-anchor="middle" fill="#F5F5F7" font-size="12" font-family="sans-serif">Dashboard</text>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6" fill="#2DD4BF"/>
+            </marker>
+          </defs>
+          <path d="M 60 130 Q 100 110 140 130 T 220 130" fill="none" stroke="#F2A93B" stroke-width="2"/>
+          <circle cx="260" cy="160" r="20" fill="none" stroke="#F472B6" stroke-width="2"/>
+        </svg>
+      </div>
+      <div style="display:flex; gap:8px; justify-content:center;">
+        <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:rgba(108,124,240,0.15); color:var(--indigo-2);">✏️ Draw</span>
+        <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:var(--surface-2); color:var(--slate);">🔄 Synced</span>
+        <span style="font-size:12px; padding:6px 12px; border-radius:8px; background:var(--surface-2); color:var(--slate);">🧹 Clear</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="section" id="rooms">
+  <div class="section-head">
+    <span class="section-tag">Connectivity</span>
+    <h2>You can create a room on Setu</h2>
+    <p class="section-sub">Share the code with others. They can join the room. Start collaborating with you.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Three Ways to Join</h3>
+      <p>Every room gets a code, a QR code for mobile and a shareable link. Pick whichever is most convenient.</p>
+      <ul>
+        <li>8-Character alphanumeric room code</li>
+        <li>QR code for mobile join</li>
+        <li>Shareable link with auto-join</li>
+        <li>Copy code or link with one click</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
+        <div class="mock-qr">
+          <div class="mock-qr-grid" id="qrGrid"></div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <span style="font-family:monospace; font-size:20px; font-weight:700; letter-spacing:4px; background:var(--bg-3); padding:10px 18px; border-radius:10px; border:1px solid var(--border);">SETU4XY</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:linear-gradient(135deg,var(--indigo),var(--indigo-2)); color:#fff; font-weight:600; cursor:pointer;">📋 Copy Code</span>
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:var(--surface-2); color:var(--text); font-weight:600; cursor:pointer;">🔗 Copy Link</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Auto-Reconnect & State</h3>
+      <p>Setu remembers your room. Refresh the page. Reopen the app and you'll automatically reconnect to your last active room.</p>
+      <ul>
+        <li>Saved room state in localStorage</li>
+        <li>Auto-reconnect on page load</li>
+        <li>URL parameter auto-join (?room=&code=)</li>
+        <li>Live WebSocket connection indicator</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center; flex:1;">
+        <div style="display:flex; align-items:center; gap:12px; padding:14px; background:var(--bg-3); border-radius:12px; border:1px solid var(--border);">
+          <span style="width:10px; height:10px; border-radius:50%; background:var(--green); box-shadow:0 0 10px var(--green);"></span>
+          <div>
+            <div style="font-size:14px; font-weight:600;">Connected to Room: 4XY8A1B2</div>
+            <div style="font-size:12px; color:var(--slate);">WebSocket live • 3 members online</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:14px; background:var(--bg-3); border-radius:12px; border:1px solid var(--border);">
+          <span style="font-size:20px;">🔄</span>
+          <div>
+            <div style="font-size:14px; font-weight:600;">Auto-Reconnect Enabled</div>
+            <div style="font-size:12px; color:var(--slate);">Room state saved locally</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:14px; background:var(--bg-3); border-radius:12px; border:1px solid var(--border);">
+          <span style="font-size:20px;">🚪</span>
+          <div>
+            <div style="font-size:14px; font-weight:600;">Leave Room Anytime</div>
+            <div style="font-size:12px; color:var(--slate);">Session cleared from server</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QR FILE TRANSFER -->
+<section class="section" id="qr-transfer">
+  <div class="section-head">
+    <span class="section-tag">QR File Transfer</span>
+    <h2>You can share files with others using a QR code on Setu</h2>
+    <p class="section-sub">Upload any file or folder. Instantly get a QR code + shareable link. Anyone can download. No login needed. Files auto-delete after 7 minutes.</p>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Upload & Generate QR</h3>
+      <p>Select files or an entire folder, hit "Generate QR Code", and Setu uploads to a secure server and returns a scannable QR + short code. Share it with anyone — they just scan and download.</p>
+      <ul>
+        <li>Files & folders up to 10GB per upload</li>
+        <li>Folders auto-zipped client-side (JSZip)</li>
+        <li>Live upload progress with "प्रेषयति" animation</li>
+        <li>QR code, shareable link & short code</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <div style="border:2px dashed var(--border-2); border-radius:12px; padding:20px; text-align:center; width:100%;">
+          <div style="font-size:30px; margin-bottom:6px;">⬆</div>
+          <p style="font-size:13px; color:var(--slate);">Drop files here or click</p>
+          <p style="font-size:11px; color:var(--slate-2); margin-top:4px;">Max: 10GB per Upload</p>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--indigo),var(--indigo-2)); color:#fff; padding:10px 28px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer;">📱 Generate QR Code</div>
+        <div style="width:100%; background:var(--bg-3); border-radius:10px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px;">
+            <span style="color:var(--indigo-2); font-weight:700;">📤 Uploading...</span>
+            <span style="color:var(--indigo-2); font-weight:700;">65%</span>
+          </div>
+          <div style="height:6px; background:var(--surface-2); border-radius:6px; overflow:hidden;">
+            <div style="width:65%; height:100%; background:linear-gradient(90deg,var(--indigo),var(--teal)); border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Receive via Code or QR</h3>
+      <p>Enter a transfer code in the Receive tab or Quick Receive box and Setu fetches the file info, shows a 7-minute countdown timer and lets you download all files with one click. Password-protected? Just enter the password to get a download ticket.</p>
+      <ul>
+        <li>Quick Receive box on home page</li>
+        <li>Full Receive tab with file list and timer</li>
+        <li>Live 7-minute expiry countdown</li>
+        <li>Password verification with secure ticket</li>
+        <li>One-time download option</li>
+        <li>Expire link manually (uploader only)</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center;">
+          <div style="font-size:24px; margin-bottom:6px;">📥</div>
+          <div style="font-size:14px; font-weight:600; margin-bottom:8px;">Receive Files</div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px; font-family:monospace; letter-spacing:2px; color:var(--slate);">Enter Code</div>
+          <div style="margin-top:10px; background:linear-gradient(135deg,var(--indigo),var(--indigo-2)); color:#fff; padding:8px; border-radius:8px; font-size:13px; font-weight:600;">Download Files</div>
+        </div>
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-size:13px; font-weight:600;">⏱ Time Remaining</span>
+            <span style="font-family:monospace; font-weight:700; color:var(--amber); font-size:16px;">6:42</span>
+          </div>
+          <div class="mock-file" style="margin-bottom:8px;">
+            <div class="mock-file-ic">📦</div>
+            <div class="mock-file-info">
+              <div class="mock-file-name">project-files.zip</div>
+              <div class="mock-file-meta">12.4 MB • Encrypted</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <span style="flex:1; text-align:center; font-size:12px; padding:8px; border-radius:8px; background:linear-gradient(135deg,var(--indigo),var(--indigo-2)); color:#fff; font-weight:600;">⬇ Download All</span>
+            <span style="flex:1; text-align:center; font-size:12px; padding:8px; border-radius:8px; background:rgba(248,113,113,0.15); color:var(--red); font-weight:600;">✕ Expire Link</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Share Anywhere</h3>
+      <p>Once uploaded, share your transfer via WhatsApp, Email, QR code print or just copy the link. The QR code can be downloaded as a PNG. Printed directly with the transfer code.</p>
+      <ul>
+        <li>One-click WhatsApp share with file details</li>
+        <li>Email share with pre-filled subject and body</li>
+        <li>Download QR code as PNG image</li>
+        <li>Print QR code with transfer code</li>
+        <li>Copy shareable link to clipboard</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <div class="mock-qr" style="width:140px; height:140px;">
+          <div class="mock-qr-grid" id="qrGrid2"></div>
+        </div>
+        <div style="font-family:monospace; font-size:18px; font-weight:700; letter-spacing:3px; background:var(--bg-3); padding:8px 16px; border-radius:8px; border:1px solid var(--border);">AB3X9K</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:#25D366; color:#fff; font-weight:600;">💬 WhatsApp</span>
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:var(--surface-2); color:var(--text); font-weight:600;">✉️ Email</span>
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:var(--surface-2); color:var(--text); font-weight:600;">⬇ QR PNG</span>
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:var(--surface-2); color:var(--text); font-weight:600;">🖨️ Print</span>
+          <span style="font-size:12px; padding:8px 14px; border-radius:8px; background:var(--surface-2); color:var(--text); font-weight:600;">🔗 Copy Link</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-text">
+      <h3>Security & History</h3>
+      <p>Every transfer is secured with password protection and a one-time download flag. Track all your transfers in the History tab with codes, timestamps and protection badges.</p>
+      <ul>
+        <li>Optional password protection on uploads</li>
+        <li>One-time download auto-expires after fetch</li>
+        <li>7-minute auto-delete timer</li>
+        <li>Upload history with codes and badges</li>
+        <li>Delete history entries anytime</li>
+        <li>Only uploader can expire links (delete token)</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(108,124,240,0.15); color:var(--indigo-2); font-weight:600;">🔒 Password Protected</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(242,169,59,0.15); color:var(--amber); font-weight:600;">⏱ 7 min auto-delete</span>
+          <span style="font-size:12px; padding:6px 12px; border-radius:999px; background:rgba(52,211,153,0.15); color:var(--green); font-weight:600;">⬇ One-time download</span>
+        </div>
+        <div style="background:var(--bg-3); border:1px solid var(--border); border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; color:var(--indigo-2); margin-bottom:10px;">🗂 Transfer History</div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border);">
+            <div>
+              <div style="font-size:13px; font-weight:600;">Code: AB3X9K</div>
+              <div style="font-size:11px; color:var(--slate);">7/7/2026, 4:20 AM</div>
+            </div>
+            <div style="font-size:11px; color:var(--slate);">3 files 🔒 ⬇</div>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0;">
+            <div>
+              <div style="font-size:13px; font-weight:600;">Code: XY7P2M</div>
+              <div style="font-size:11px; color:var(--slate);">7/7/2026, 3:45 AM</div>
+            </div>
+            <div style="font-size:11px; color:var(--slate);">1 file</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="section" id="security">
+  <div class="section-head">
+    <span class="section-tag">Security</span>
+    <h2>Setu is designed to be private and secure</h2>
+    <p class="section-sub">Your conversations and files stay protected with authentication and encrypted transit.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card reveal">
+      <div class="card-icon">🔑</div>
+      <h3>JWT Authentication</h3>
+      <p>Token-based auth powered by Appwrite ensures only authorized users can create and join rooms. Tokens are verified on every API call and WebSocket connection.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔒</div>
+      <h3>Encrypted Transit</h3>
+      <p>All messages and file transfers are sent using encrypted connections. The messages and files are locked and can only be opened by the person they are meant for.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🆔</div>
+      <h3>Session Tracking</h3>
+      <p>When you connect to our service you get a code that is just for you. Our server keeps track of who's connected to each room so we can show you who is online.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👤</div>
+      <h3>User Profiles</h3>
+      <p>If you log in to our service you get your profile where you can add a nickname, phone number and country. You can see your profile in the sidebar. You can even log out quickly from there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to connect?</h2>
+  <p>You can start using Setu right away and begin working with others in just a few seconds. You do not need to install anything or sign up to try it out.</p>
+  <div class="hero-btns">
+    <a href="setu.html"><button class="btn-primary">Launch Setu →</button></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(3,1fr);gap:48px;padding:60px 24px 32px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div class="nav-logo" style="width:38px;height:38px;border-radius:10px;overflow:hidden;background:whitesmoke;border:1px solid var(--border);"><img src="favicons/logo1.webp" alt="Setu Logo" style="width:100%;height:100%;object-fit:cover;"></div>
+        <span style="font-size:18px;font-weight:800;">Setu</span>
+      </div>
+      <p style="color:var(--slate);font-size:13.5px;line-height:1.7;max-width:260px;">Real-time collaboration platform — bridge the gap. Share files, chat, and collaborate instantly, from any browser.</p>
+      <div style="display:flex;gap:10px;margin-top:18px;">
+        <a href="https://github.com/Infinity0-0/Setu_Bridge.git" target="_blank" rel="noopener" title="GitHub" style="width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;color:var(--slate);transition:background .2s,color .2s,transform .2s;text-decoration:none;" onmouseover="this.style.background='var(--surface-2)';this.style.color='var(--text)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--surface)';this.style.color='var(--slate)';this.style.transform='translateY(0)'">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Platform</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="index.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Home</a></li>
+        <li style="margin-bottom:10px;"><a href="setu.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Open App</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">How It Works</a></li>
+        <li style="margin-bottom:10px;"><a href="feature.html" style="color:var(--text);font-size:14px;text-decoration:none;">Features</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Support</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+        <li style="margin-bottom:10px;"><a href="setu_contact.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#security" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Security</a></li>
+        <li style="margin-bottom:10px;"><a href="How_It_Works.html#privacy" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Data Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--slate-2);margin-bottom:16px;">Legal</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:10px;"><a href="privacy_policy.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Privacy Policy</a></li>
+        <li style="margin-bottom:10px;"><a href="terms.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">Terms & Conditions</a></li>
+        <li style="margin-bottom:10px;"><a href="faq.html" style="color:var(--slate);font-size:14px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate)'">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:24px 24px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <p style="color:var(--slate-2);font-size:13px;">© 2025 Setu-Bridge. Built with ❤️ in India.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="privacy_policy.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Terms & Conditions</a>
+      <a href="faq.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">FAQ</a>
+      <a href="setu_contact.html" style="color:var(--slate-2);font-size:13px;text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--slate-2)'">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('themeBtn');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('setu-theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  themeBtn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('setu-theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Generate mock QR pattern
+  (function() {
+    const grid = document.getElementById('qrGrid');
+    if (!grid) return;
+    let seed = 42;
+    function rand() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    for (let i = 0; i < 225; i++) {
+      const cell = document.createElement('span');
+      const row = Math.floor(i / 15), col = i % 15;
+      const inFinder = (row < 5 && col < 5) || (row < 5 && col > 9) || (row > 9 && col < 5);
+      const finderBorder = (row === 0 || row === 4 || col === 0 || col === 4) && (row < 5 && col < 5);
+      const finderBorder2 = (row === 0 || row === 4 || col === 10 || col === 14) && (row < 5 && col > 9);
+      const finderBorder3 = (row === 9 || row === 13 || col === 0 || col === 4) && (row > 9 && col < 5);
+      const finderCenter = (row > 0 && row < 4 && col > 0 && col < 4) || (row > 0 && row < 4 && col > 10 && col < 14) || (row > 10 && row < 13 && col > 0 && col < 4);
+      if (inFinder) {
+        if (finderBorder || finderBorder2 || finderBorder3 || finderCenter) cell.className = '';
+        else cell.className = 'off';
+      } else {
+        cell.className = rand() > 0.5 ? '' : 'off';
+      }
+      grid.appendChild(cell);
+    }
+  })();
+</script>
+
+</body>
+</html>
