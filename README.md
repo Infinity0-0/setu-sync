@@ -3,6 +3,7 @@
 <img src="https://setusync.space/favicons/logo1.webp" alt="Setu Logo" width="90"/>
 
 # सेतु · SetuSync
+🟢 LIVE PRODUCT [setusync.space](https://setusync.space)
 
 **Real-time collaboration, secure file sharing & instant rooms — all in your browser.**
 
@@ -61,7 +62,7 @@ bridge/
     ├── auth_routes.py      # Authentication endpoints
     ├── auth_appwrite.py    # Appwrite integration (accounts, sessions)
     ├── crypto_utils.py     # AES chunked encryption / decryption
-    ├── tg_client.py        # Telegram storage backend (Pyrogram)
+    ├── tg_client.py        # storage backend 
     ├── db.py               # SQLAlchemy models & database
     ├── contact_api.py      # Contact form endpoint
     ├── whiteboard/         # Excalidraw sync server (Node.js)
@@ -83,100 +84,14 @@ bridge/
 - **FastAPI** (Python 3.11) — async REST + WebSocket API
 - **SQLAlchemy** — ORM for SQLite / PostgreSQL
 - **Appwrite** — user auth & session management
-- **Pyrogram** — Telegram as encrypted file storage backend
-- **Gunicorn + Uvicorn** — production WSGI/ASGI server
+- **Pyrogram** — storage as encrypted file storage backend
+- **Uvicorn** — production WSGI/ASGI server
 - **Node.js** — Excalidraw sync server subprocess
 - **Docker** — containerized deployment on Render
 
 ---
 
-## ⚡ Quick Start (Local Dev)
-
-### Backend
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/your-username/setu-sync.git
-cd setu-sync/setu_backend
-
-# 2. Create & activate virtual environment
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Set up environment variables
-cp .env.template .env
-# Fill in your Appwrite, Telegram, and DB credentials in .env
-
-# 5. Run the dev server
-uvicorn main:app --reload --port 8000
-```
-
-### Frontend
-
-```bash
-cd setu-frontend
-
-# Option 1: Serve locally (Python)
-python -m http.server 3000
-
-# Option 2: Deploy to Cloudflare Pages (uses wrangler.jsonc config)
-npx wrangler pages dev .
-```
-
-> Backend: `http://localhost:8000`  
-> Frontend: `http://localhost:3000`
-
----
-
-## 🔧 Environment Variables
-
-Create a `.env` file in `setu_backend/` based on `.env.template`:
-
-```env
-# Appwrite (Auth)
-APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
-APPWRITE_PROJECT_ID=your_project_id
-APPWRITE_API_KEY=your_api_key
-
-# Telegram (File Storage)
-TELEGRAM_API_ID=your_api_id
-TELEGRAM_API_HASH=your_api_hash
-TELEGRAM_SESSION_STRING=your_session_string
-TELEGRAM_CHAT_ID=your_storage_chat_id
-
-# CORS
-ALLOWED_ORIGINS=https://setusync.space,http://localhost:3000
-
-# Database
-DATABASE_URL=sqlite:///./setu.db
-```
-
----
-
-## 🐳 Docker Deployment
-
-```bash
-cd setu_backend
-
-# Build the image
-docker build -t setu-backend .
-
-# Run the container
-docker run -p 8000:8000 --env-file .env setu-backend
-```
-
-The `Dockerfile` includes:
-- Python 3.11 slim base
-- Node.js 18 (for the Excalidraw sync server)
-- Gunicorn + Uvicorn workers
-- Automatic whiteboard `npm install` on build
-
----
-
-## 🔐 Security
+#### 🔐 Security
 
 - **Chunked AES Encryption** — files are encrypted before uploading to Telegram storage
 - **JWT Sessions** — HttpOnly cookies with Appwrite-backed session tokens
